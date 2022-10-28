@@ -2,16 +2,16 @@ import { GetServerSideProps } from 'next'
 import { Box } from '@chakra-ui/react'
 
 interface User {
-  name?: String
-  slug: String
-  hasPlus: Boolean
+  name?: string
+  slug: string
+  hasPlus: boolean
 }
 
 const getUser = async (username: string): Promise<User | null> => {
-  const apiEndpoint: string = 'https://2c2cbe6f-ebbf-4aa3-8e0f-418f40523bd7.mock.pstmn.io/users/'
+  const apiEndpoint: string = (process.env.PAGES_API_HOST as string) + '/users/'
   const url = apiEndpoint + username
   const response = await fetch(url)
-  let body = { exists: false }
+  let body: any = { exists: false }
   try {
     body = await response.json()
   } catch (e) {
@@ -19,13 +19,13 @@ const getUser = async (username: string): Promise<User | null> => {
   }
   console.log(body)
 
-  if (!(body?.exists)) {
+  if (!(body.exists as boolean)) {
     return null
   }
 
   return {
     slug: username,
-    hasPlus: body?.plus as Boolean
+    hasPlus: body?.plus as boolean
   }
 }
 
@@ -48,7 +48,7 @@ const UserProfile = ({ user }: { user?: User }): JSX.Element => {
     <Box>
       User {user?.slug}
       {
-        ((user?.hasPlus) === true) &&
+        (user?.hasPlus as boolean) &&
         <span> with Revolancer Plus</span>
       }
     </Box>
