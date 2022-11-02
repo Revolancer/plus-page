@@ -11,9 +11,6 @@ import { FaBars } from 'react-icons/fa'
 import Link from '../link'
 
 function MobileNav (modal: any): JSX.Element {
-  const closer = (): void => {
-    console.log('close please')
-  }
   return (
     <Menu>
       <MenuButton
