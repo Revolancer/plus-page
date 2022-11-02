@@ -43,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const UserProfile = ({ user }: { user?: User }): JSX.Element => {
+const UserProfile = ({ user }: { user: User | null }): JSX.Element => {
   return (
     <Box>
       User {user?.slug}
