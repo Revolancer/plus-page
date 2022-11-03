@@ -62,17 +62,17 @@ function MobileNav (modal: any): JSX.Element {
           _focus={{
             bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
             filter: 'auto',
-            brightness: '120%'
+            brightness: '85%'
           }}
           _active={{
             bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
             filter: 'auto',
-            brightness: '120%'
+            brightness: '85%'
           }}
           _hover={{
             bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
             filter: 'auto',
-            brightness: '120%'
+            brightness: '85%'
           }}
           marginInline="3"
           marginBlock="1.5"

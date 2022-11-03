@@ -4,6 +4,10 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     adjustFontFallbacks: true
+  },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en'
   }
 }
 

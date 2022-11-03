@@ -1,0 +1,9 @@
+a.scrollto {
+    scroll-margin-top: 8rem;
+}
+
+@media only screen and (min-width: 62em) {
+    a.scrollto {
+        scroll-margin-top: 12rem;
+    }
+}

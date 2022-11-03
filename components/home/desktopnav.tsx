@@ -4,10 +4,10 @@ import Link from '../link'
 function DesktopNav (modal: any): JSX.Element {
   return (
     <>
-      <Link href='#features'>
+      <Link href='#features' className="smooth-scroll">
         Features
       </Link>
-      <Link href='#pricing'>
+      <Link href='#pricing' className="smooth-scroll">
         Pricing
       </Link>
       <Spacer />
@@ -17,17 +17,17 @@ function DesktopNav (modal: any): JSX.Element {
         _focus={{
           bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
           filter: 'auto',
-          brightness: '120%'
+          brightness: '85%'
         }}
         _active={{
           bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
           filter: 'auto',
-          brightness: '120%'
+          brightness: '85%'
         }}
         _hover={{
           bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
           filter: 'auto',
-          brightness: '120%'
+          brightness: '85%'
         }}
       >
         Get Started
