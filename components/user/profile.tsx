@@ -14,6 +14,15 @@ export default function UserProfile ({ user }: UserProfileProps): JSX.Element {
       ProfileLayout = TabbedLayout
   }
 
+  switch (user.colorScheme) {
+    case 'blue':
+      user.colorScheme = 'blue'
+      break
+    case 'red':
+    default:
+      user.colorScheme = 'red'
+  }
+
   return (
     <ProfileLayout user={user} />
   )
