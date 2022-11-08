@@ -8,7 +8,7 @@ interface User {
 }
 
 const getUser = async (username: string): Promise<User | null> => {
-  const apiEndpoint: string = (process.env.PAGES_API_HOST as string) + '/users/'
+  const apiEndpoint: string = (process.env.NEXT_PUBLIC_PAGES_API_HOST as string) + '/users/'
   const url = apiEndpoint + username
   const response = await fetch(url)
   let body: any = { exists: false }
