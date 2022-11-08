@@ -1,10 +1,21 @@
 import { GetServerSideProps } from 'next'
-import { Box } from '@chakra-ui/react'
+import UserProfile from '../components/user/profile'
 
-interface User {
-  name?: string
+export interface SocialLink {
+  name: string
+  url: string
+}
+
+export interface User {
+  name: string
   slug: string
   hasPlus: boolean
+  portfolio: string[]
+  avatar: string
+  backgroundImage: string
+  colorScheme: string
+  about: string
+  socials: SocialLink[]
 }
 
 const getUser = async (username: string): Promise<User | null> => {
@@ -23,10 +34,51 @@ const getUser = async (username: string): Promise<User | null> => {
     return null
   }
 
-  return {
+  const user: User = {
     slug: username,
-    hasPlus: body?.plus as boolean
+    hasPlus: body.plus,
+    portfolio: body.portfolio,
+    avatar: body.avatar,
+    backgroundImage: body.background,
+    colorScheme: body.colourScheme,
+    about: body.description,
+    socials: body.socials,
+    name: body.displayName
   }
+
+  if (typeof user.hasPlus === 'undefined') {
+    user.hasPlus = false
+  }
+
+  if (typeof user.portfolio === 'undefined') {
+    user.portfolio = []
+  }
+
+  if (typeof user.avatar === 'undefined') {
+    user.avatar = ''
+  }
+
+  if (typeof user.backgroundImage === 'undefined') {
+    user.backgroundImage = ''
+  }
+
+  if (typeof user.colorScheme === 'undefined') {
+    user.colorScheme = ''
+  }
+
+  if (typeof user.about === 'undefined') {
+    user.about = ''
+  }
+
+  if (typeof user.socials === 'undefined') {
+    user.socials = []
+  }
+
+  if (typeof user.name === 'undefined') {
+    user.name = username
+  }
+
+  return user
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -43,16 +95,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const UserProfile = ({ user }: { user: User | null }): JSX.Element => {
+const UserPage = ({ user }: { user: User | null }): JSX.Element => {
   return (
-    <Box>
-      User {user?.slug}
-      {
-        (user?.hasPlus as boolean) &&
-        <span> with Revolancer Plus</span>
+    <>
+      {(user != null) &&
+      <UserProfile user={user} />
       }
-    </Box>
+    </>
   )
 }
 
-export default UserProfile
+export default UserPage
