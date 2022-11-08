@@ -16,6 +16,7 @@ export interface User {
   colorScheme: string
   about: string
   socials: SocialLink[]
+  layout: string
 }
 
 const getUser = async (username: string): Promise<User | null> => {
@@ -44,6 +45,7 @@ const getUser = async (username: string): Promise<User | null> => {
     about: body.description,
     socials: body.socials,
     name: body.displayName
+    layout: body.layout
   }
 
   if (typeof user.hasPlus === 'undefined') {
@@ -76,6 +78,10 @@ const getUser = async (username: string): Promise<User | null> => {
 
   if (typeof user.name === 'undefined') {
     user.name = username
+  }
+
+  if (typeof user.layout === 'undefined') {
+    user.layout = 'advanced'
   }
 
   return user
