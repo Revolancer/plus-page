@@ -44,7 +44,7 @@ const getUser = async (username: string): Promise<User | null> => {
     colorScheme: body.colourScheme,
     about: body.description,
     socials: body.socials,
-    name: body.displayName
+    name: body.displayName,
     layout: body.layout
   }
 
