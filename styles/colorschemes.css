@@ -1,0 +1,25 @@
+html {
+    --color-900: #171923;
+    --color-800: #1A202C;
+    --color-700: #2D3748;
+    --color-600: #4A5568;
+    --color-500: #718096;
+    --color-400: #A0AEC0;
+    --color-300: #CBD5E0;
+    --color-200: #E2E8F0;
+    --color-100: #EDF2F7;
+    --color-50: #F7FAFC;
+}
+
+[data-theme='red'] {
+    --color-900: #63171B;
+    --color-800: #822727;
+    --color-700: #9B2C2C;
+    --color-600: #C53030;
+    --color-500: #E53E3E;
+    --color-400: #F56565;
+    --color-300: #FC8181;
+    --color-200: #FEB2B2;
+    --color-100: #FED7D7;
+    --color-50: #FFF5F5;
+}

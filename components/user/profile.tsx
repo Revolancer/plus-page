@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { User } from '../../pages/[user]'
 import TabbedLayout from './layout/tabbed'
 
@@ -24,6 +25,8 @@ export default function UserProfile ({ user }: UserProfileProps): JSX.Element {
   }
 
   return (
-    <ProfileLayout user={user} />
+    <Box data-theme={user.colorScheme}>
+      <ProfileLayout user={user} />
+    </Box>
   )
 }

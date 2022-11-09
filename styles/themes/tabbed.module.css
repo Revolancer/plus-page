@@ -1,0 +1,33 @@
+a.sectionLink {
+    color: var(--color-600);
+    font-weight: 600;
+    padding: 8px;
+    display: inline-block;
+}
+
+a.sectionLinkActive {
+    font-weight: 700;
+    border-bottom: 4px solid var(--color-600);
+}
+
+a.scrollTo {
+    scroll-margin-top: 190px;
+}
+
+.profileBody {
+    background-color: var(--color-50);
+    color: var(--color-900);
+    margin-inline: 1rem;
+    padding-inline: 1rem;
+}
+
+.profileBody > section {
+    max-width: 30rem;
+    margin-inline: auto;
+}
+
+@media only screen and (min-width: 56em) {
+    .profileBody {
+        margin-inline: 0;
+    }
+}

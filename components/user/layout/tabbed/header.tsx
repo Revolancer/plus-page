@@ -5,10 +5,12 @@ import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
 import useScrollSpy from 'react-use-scrollspy'
 
+import styles from '../../../../styles/themes/tabbed.module.css'
+
 export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
-    offsetPx: -80
+    offsetPx: -190
   })
 
   return (
@@ -24,7 +26,7 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
       borderBottomRadius="16"
       boxShadow="lg"
       >
-        <Container maxW='container.md'>
+        <Container maxW='30rem' p='0'>
           <Flex alignItems='top' gap='8'>
             <Box w="24" h="24" objectFit="cover" borderRadius="full" overflow="hidden" position="relative">
               <Image fill src={user.avatar}
@@ -41,15 +43,9 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
             <nav>
               <Link
               href="#about"
-              textColor={user.colorScheme + '.500'}
-              fontWeight="semibold"
-              data-active={activeSection === 0}
-              className={(activeSection === 0 ? 'section-link-active' : '') + ' smooth-scroll'}>About Me</Link>
+              className={(activeSection === 0 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>About Me</Link>
               <Link href="#portfolio"
-              textColor={user.colorScheme + '.500'}
-              fontWeight="semibold"
-              data-active={activeSection === 1}
-              className={(activeSection === 1 ? 'section-link-active' : '') + ' smooth-scroll'}>Portfolio</Link>
+              className={(activeSection === 1 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>Portfolio</Link>
             </nav>
           </Flex>
         </Container>
