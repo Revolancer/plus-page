@@ -17,7 +17,8 @@ export default function UserProfile ({ user }: UserProfileProps): JSX.Element {
 
   switch (user.colorScheme) {
     case 'blue':
-      user.colorScheme = 'blue'
+      break
+    case 'purple':
       break
     case 'red':
     default:

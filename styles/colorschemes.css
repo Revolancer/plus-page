@@ -23,3 +23,29 @@ html {
     --color-100: #FED7D7;
     --color-50: #FFF5F5;
 }
+
+[data-theme='purple'] {
+    --color-900: #322659;
+    --color-800: #44337A;
+    --color-700: #553C9A;
+    --color-600: #6B46C1;
+    --color-500: #805AD5;
+    --color-400: #9F7AEA;
+    --color-300: #B794F4;
+    --color-200: #D6BCFA;
+    --color-100: #E9D8FD;
+    --color-50: #FAF5FF;
+}
+
+[data-theme='blue'] {
+    --color-900: #1A365D;
+    --color-800: #2A4365;
+    --color-700: #2C5282;
+    --color-600: #2B6CB0;
+    --color-500: #3182CE;
+    --color-400: #4299E1;
+    --color-300: #63B3ED;
+    --color-200: #90CDF4;
+    --color-100: #BEE3F8;
+    --color-50: #EBF8FF;
+}
