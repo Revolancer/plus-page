@@ -8,7 +8,6 @@ YupPassword(yup)
 
 const apiHost = process.env.PAGES_API_HOST as string
 const captchaSitekey = process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY as string
-console.log(captchaSitekey)
 
 const RegistrationSchema = yup.object().shape({
   url: yup.string()
