@@ -13,7 +13,6 @@ export default function Document (): JSX.Element {
                   e.preventDefault()
                   targetRef = '#' + this.getAttribute('href').split('#')[1]
                   target = document.querySelector(targetRef)
-                  console.log(targetRef)
                   if (target){
                     target.scrollIntoView({
                       behavior: 'smooth'

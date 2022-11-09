@@ -11,7 +11,7 @@ a.sectionLinkActive {
 }
 
 a.scrollTo {
-    scroll-margin-top: 190px;
+    scroll-margin-top: 195px;
 }
 
 .profileBody {
@@ -19,15 +19,22 @@ a.scrollTo {
     color: var(--color-900);
     margin-inline: 1rem;
     padding-inline: 1rem;
+    padding-block-start: 1rem;
+    padding-block-end: 4rem;
 }
 
 .profileBody > section {
     max-width: 30rem;
     margin-inline: auto;
+    padding-block-end: 1rem;
 }
 
 @media only screen and (min-width: 56em) {
     .profileBody {
         margin-inline: 0;
     }
+}
+
+h1.heading {
+    color: var(--color-900);
 }

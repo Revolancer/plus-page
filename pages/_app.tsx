@@ -3,6 +3,11 @@ import '../styles/colorschemes.css'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 
+// Lightgallery styles
+import 'lightgallery/css/lightgallery.css'
+import 'lightgallery/css/lg-zoom.css'
+import 'lightgallery/css/lg-thumbnail.css'
+
 // Set up Chakra theme
 const theme = extendTheme({
   colors: {

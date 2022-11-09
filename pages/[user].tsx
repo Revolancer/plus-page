@@ -29,7 +29,6 @@ const getUser = async (username: string): Promise<User | null> => {
   } catch (e) {
     return null
   }
-  console.log(body)
 
   if (!(body.exists as boolean)) {
     return null
@@ -39,12 +38,12 @@ const getUser = async (username: string): Promise<User | null> => {
     slug: username,
     hasPlus: body.plus,
     portfolio: body.portfolio,
-    avatar: body.avatar,
+    avatar: body.profileImage,
     backgroundImage: body.background,
     colorScheme: body.colourScheme,
     about: body.description,
     socials: body.socials,
-    name: body.displayName,
+    name: body.displayname,
     layout: body.layout
   }
 

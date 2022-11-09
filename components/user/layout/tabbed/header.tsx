@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Text } from '@chakra-ui/react'
+import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
@@ -10,7 +10,7 @@ import styles from '../../../../styles/themes/tabbed.module.css'
 export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
-    offsetPx: -190
+    offsetPx: -200
   })
 
   return (
@@ -28,7 +28,7 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
       >
         <Container maxW='30rem' p='0'>
           <Flex alignItems='top' gap='8'>
-            <Box w="24" h="24" objectFit="cover" borderRadius="full" overflow="hidden" position="relative">
+            <Box w="24" h="24" objectFit="cover" borderRadius="full" overflow="hidden" position="relative" flexShrink="0">
               <Image fill src={user.avatar}
               alt={user.name + '\'s Profile Picture'}
               priority={true}
@@ -36,7 +36,7 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
               style={{ objectFit: 'cover' }}/>
             </Box>
             <Flex direction="column" gap="2">
-              <Text fontSize="xl" fontWeight="bold">{user.name}</Text>
+              <Heading fontSize="xl" fontWeight="bold" as="h1" className={styles.heading}>{user.name.replace(/\u00a0/g, ' ')}</Heading>
             </Flex>
           </Flex>
           <Flex gap="8" mt="4">
