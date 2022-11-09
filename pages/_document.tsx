@@ -11,7 +11,8 @@ export default function Document (): JSX.Element {
           {`document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
               anchor.addEventListener('click', function (e) {
                   e.preventDefault()
-                  target = document.querySelector(this.getAttribute('href').replace('/',''))
+                  targetRef = '#' + this.getAttribute('href').split('#')[1]
+                  target = document.querySelector(targetRef)
                   if (target){
                     target.scrollIntoView({
                       behavior: 'smooth'

@@ -1,9 +1,16 @@
-import { border, Box, Container, Flex, Text, textDecoration } from '@chakra-ui/react'
+import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
+import { MutableRefObject } from 'react'
+import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
-import { UserProfileProps } from '../../profile'
+import useScrollSpy from 'react-use-scrollspy'
 
-export default function Header ({ user }: UserProfileProps): JSX.Element {
+export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
+  const activeSection = useScrollSpy({
+    sectionElementRefs: sectionRefs,
+    offsetPx: -80
+  })
+
   return (
     <>
       <Box
@@ -31,14 +38,19 @@ export default function Header ({ user }: UserProfileProps): JSX.Element {
             </Flex>
           </Flex>
           <Flex gap="8" mt="4">
-            <Link
-            href="#about"
-            textColor={user.colorScheme + '.500'}
-            fontWeight="semibold"
-            _active={{
-              border: '1px'
-            }}>About Me</Link>
-            <Link href="#portfolio">Portfolio</Link>
+            <nav>
+              <Link
+              href="#about"
+              textColor={user.colorScheme + '.500'}
+              fontWeight="semibold"
+              data-active={activeSection === 0}
+              className={(activeSection === 0 ? 'section-link-active' : '') + ' smooth-scroll'}>About Me</Link>
+              <Link href="#portfolio"
+              textColor={user.colorScheme + '.500'}
+              fontWeight="semibold"
+              data-active={activeSection === 1}
+              className={(activeSection === 1 ? 'section-link-active' : '') + ' smooth-scroll'}>Portfolio</Link>
+            </nav>
           </Flex>
         </Container>
       </Box>
