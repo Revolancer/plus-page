@@ -9,6 +9,7 @@ import 'lightgallery/css/lightgallery.css'
 import 'lightgallery/css/lg-zoom.css'
 import 'lightgallery/css/lg-thumbnail.css'
 import Script from 'next/script'
+import Analytics from '../components/analytics'
 
 // Set up Chakra theme
 const theme = extendTheme({
@@ -28,6 +29,7 @@ const theme = extendTheme({
 
 export default function App ({ Component, pageProps }: AppProps): JSX.Element {
   return (
+    <>
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
       <Script strategy="afterInteractive" id='smooth-scroll'>
@@ -43,7 +45,9 @@ export default function App ({ Component, pageProps }: AppProps): JSX.Element {
                   }
               })
           })`}
-        </Script>
+      </Script>
+      <Analytics />
     </ChakraProvider>
+    </>
   )
 }
