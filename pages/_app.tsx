@@ -8,6 +8,7 @@ import type { AppProps } from 'next/app'
 import 'lightgallery/css/lightgallery.css'
 import 'lightgallery/css/lg-zoom.css'
 import 'lightgallery/css/lg-thumbnail.css'
+import Script from 'next/script'
 
 // Set up Chakra theme
 const theme = extendTheme({
@@ -29,6 +30,20 @@ export default function App ({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
+      <Script strategy="afterInteractive" id='smooth-scroll'>
+          {`document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                  e.preventDefault()
+                  targetRef = '#' + this.getAttribute('href').split('#')[1]
+                  target = document.querySelector(targetRef)
+                  if (target){
+                    target.scrollIntoView({
+                      behavior: 'smooth'
+                    })
+                  }
+              })
+          })`}
+        </Script>
     </ChakraProvider>
   )
 }

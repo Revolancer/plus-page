@@ -23,9 +23,6 @@ const nextConfig = {
   compiler: {
     emotion: true
   },
-  experimental: {
-    runtime: 'experimental-edge'
-  },
   webpack: (config, ctx) => {
     if (ctx.nextRuntime === 'edge') {
       if (!config.resolve.conditionNames) {

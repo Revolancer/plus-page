@@ -21,6 +21,10 @@ export interface User {
   layout: string
 }
 
+export const config = {
+  runtime: 'experimental-edge'
+}
+
 const getUser = async (username: string): Promise<User | null> => {
   const apiEndpoint: string = (process.env.NEXT_PUBLIC_PAGES_API_HOST as string) + '/users/'
   const url = apiEndpoint + username
