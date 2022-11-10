@@ -16,7 +16,7 @@ export default function PortfolioGallery ({ images }: { images: string[] }): JSX
         if (i >= 9) { return <></> }
         return (
           <>
-          <a href={image} data-src={image} >
+          <a href={image} data-src={image} aria-label='Expand Image'>
             <Image src={image}
               alt=""
               style={{ objectFit: 'cover' }}
