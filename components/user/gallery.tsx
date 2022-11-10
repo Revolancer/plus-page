@@ -4,15 +4,10 @@ import { Image } from '@chakra-ui/react'
 
 import styles from '../../styles/gallery.module.css'
 
-function onInit (): void {
-  console.log('hello lightbox')
-}
-
 export default function PortfolioGallery ({ images }: { images: string[] }): JSX.Element {
   return (
     <>
     <LightGallery
-      onInit={onInit}
       speed={500}
       plugins={[lgThumbnail]}
       elementClassNames={styles.galleryContainer}

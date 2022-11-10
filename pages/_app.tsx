@@ -1,3 +1,4 @@
+import '../styles/fonts.css'
 import '../styles/globals.css'
 import '../styles/colorschemes.css'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
@@ -19,8 +20,8 @@ const theme = extendTheme({
     rvturquoise: '#00FFF7'
   },
   fonts: {
-    body: "Montserrat, 'Montserrat Fallback', sans-serif",
-    heading: "Montserrat, 'Montserrat Fallback', sans-serif"
+    body: 'Montserrat, sans-serif',
+    heading: 'Montserrat, sans-serif'
   }
 })
 

@@ -13,7 +13,6 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
     useRef(null),
     useRef(null)
   ]
-  console.log(user)
 
   return (
     <>

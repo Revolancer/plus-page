@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    adjustFontFallbacks: true
-  },
   i18n: {
     locales: ['en'],
     defaultLocale: 'en'
@@ -14,13 +11,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-        port: '',
         pathname: '/**'
       },
       {
         protocol: 'https',
         hostname: 'revolancer.com',
-        port: '',
         pathname: '/**'
       }
     ]
