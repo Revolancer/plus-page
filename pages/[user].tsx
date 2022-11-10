@@ -8,6 +8,7 @@ export interface SocialLink {
 
 export interface User {
   name: string
+  tagline: string
   slug: string
   hasPlus: boolean
   portfolio: string[]
@@ -22,9 +23,9 @@ export interface User {
 const getUser = async (username: string): Promise<User | null> => {
   const apiEndpoint: string = (process.env.NEXT_PUBLIC_PAGES_API_HOST as string) + '/users/'
   const url = apiEndpoint + username
-  const response = await fetch(url)
   let body: any = { exists: false }
   try {
+    const response = await fetch(url)
     body = await response.json()
   } catch (e) {
     return null
@@ -39,11 +40,12 @@ const getUser = async (username: string): Promise<User | null> => {
     hasPlus: body.plus,
     portfolio: body.portfolio,
     avatar: body.profileImage,
-    backgroundImage: body.background,
+    backgroundImage: body.backgroundImage,
     colorScheme: body.colourScheme,
     about: body.description,
     socials: body.socials,
     name: body.displayname,
+    tagline: body.tagline,
     layout: body.layout
   }
 
@@ -79,6 +81,10 @@ const getUser = async (username: string): Promise<User | null> => {
     user.name = username
   }
 
+  if (typeof user.tagline === 'undefined') {
+    user.tagline = ''
+  }
+
   if (typeof user.layout === 'undefined') {
     user.layout = 'advanced'
   }
@@ -101,6 +107,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 const UserPage = ({ user }: { user: User | null }): JSX.Element => {
+  if (user === null || !user.hasPlus) {
+    if (typeof window !== 'undefined') {
+      window.location.href = '/'
+    }
+  }
+
   return (
     <>
       {(user != null) &&

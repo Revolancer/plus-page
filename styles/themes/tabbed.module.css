@@ -1,12 +1,12 @@
 a.sectionLink {
-    color: var(--color-600);
-    font-weight: 600;
+    color: var(--chakra-colors-gray-600);
     padding: 8px;
     display: inline-block;
 }
 
 a.sectionLinkActive {
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-600);
     border-bottom: 4px solid var(--color-600);
 }
 
@@ -37,4 +37,39 @@ a.scrollTo {
 
 h1.heading {
     color: var(--color-900);
+}
+
+.tagline {
+    color: var(--color-900);
+    font-size: 0.8rem;
+}
+
+div.socialIcons {
+    color: var(--color-500);
+    height: fit-content;
+    margin-top: 0.2rem;
+}
+
+div.socialIcons a:hover {
+    color: var(--color-800);
+}
+
+button.contactButton {
+    background: var(--color-500);
+    color: white;
+}
+
+button.contactButton:hover, button.contactButton:active, button.contactButton:focus {
+    background: var(--color-600);
+    color: white;
+}
+
+button.contactSubmitButton {
+    background: var(--color-500);
+    color: white;
+}
+
+button.contactSubmitButton:hover, button.contactSubmitButton:active, button.contactSubmitButton:focus {
+    background: var(--color-600);
+    color: white;
 }

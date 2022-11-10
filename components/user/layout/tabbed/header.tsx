@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
@@ -6,8 +6,10 @@ import Link from '../../../link'
 import useScrollSpy from 'react-use-scrollspy'
 
 import styles from '../../../../styles/themes/tabbed.module.css'
+import SocialLinkIcon from '../../sociallink'
+import { FaEnvelope } from 'react-icons/fa'
 
-export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
+export default function Header ({ user, sectionRefs, modal }: { user: User, sectionRefs: Array<MutableRefObject<null>>, modal: any }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
     offsetPx: -200
@@ -35,8 +37,28 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
               sizes='240px'
               style={{ objectFit: 'cover' }}/>
             </Box>
-            <Flex direction="column" gap="2">
-              <Heading fontSize="xl" fontWeight="bold" as="h1" className={styles.heading}>{user.name.replace(/\u00a0/g, ' ')}</Heading>
+            <Flex alignItems='top' gap='2' direction="column" flexGrow="1">
+              <Flex direction={{ base: 'column', md: 'row' }} justifyContent={{ base: 'start', md: 'space-between' }} flexGrow="1">
+                <Flex direction="column" gap="2">
+                  <Heading fontSize="xl" fontWeight="bold" as="h1" className={styles.heading}>{user.name.replace(/\u00a0/g, ' ')}</Heading>
+                  {user.tagline as unknown as boolean && <Text className={styles.tagline}>{user.tagline}</Text>}
+                </Flex>
+                <Flex direction="row" wrap="wrap" className={styles.socialIcons} gap="0.5">
+                  {user.socials.map((link, i) => {
+                    if (i >= 7) return (<></>)
+                    return <SocialLinkIcon link={link} key={'socials_' + (i as unknown as string)} />
+                  })}
+                </Flex>
+              </Flex>
+              <Button
+                onClick={modal.onOpen}
+                className={styles.contactButton}
+                leftIcon={<FaEnvelope />}
+                size={{ base: 'xs', md: 'sm' }}
+                w="max"
+              >
+                Contact me
+              </Button>
             </Flex>
           </Flex>
           <Flex gap="8" mt="4">
