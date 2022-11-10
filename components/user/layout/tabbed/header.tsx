@@ -12,7 +12,7 @@ import { FaEnvelope } from 'react-icons/fa'
 export default function Header ({ user, sectionRefs, modal }: { user: User, sectionRefs: Array<MutableRefObject<null>>, modal: any }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
-    offsetPx: -200
+    offsetPx: -220
   })
 
   return (

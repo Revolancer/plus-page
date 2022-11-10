@@ -11,6 +11,19 @@ html {
     --color-50: #F7FAFC;
 }
 
+[data-theme='gray']  {
+    --color-900: #171923;
+    --color-800: #1A202C;
+    --color-700: #2D3748;
+    --color-600: #4A5568;
+    --color-500: #718096;
+    --color-400: #A0AEC0;
+    --color-300: #CBD5E0;
+    --color-200: #E2E8F0;
+    --color-100: #EDF2F7;
+    --color-50: #F7FAFC;
+}
+
 [data-theme='red'] {
     --color-900: #63171B;
     --color-800: #822727;
@@ -22,6 +35,84 @@ html {
     --color-200: #FEB2B2;
     --color-100: #FED7D7;
     --color-50: #FFF5F5;
+}
+
+[data-theme='orange'] {
+    --color-900: #652B19;
+    --color-800: #7B341E;
+    --color-700: #9C4221;
+    --color-600: #C05621;
+    --color-500: #DD6B20;
+    --color-400: #ED8936;
+    --color-300: #F6AD55;
+    --color-200: #FBD38D;
+    --color-100: #FEEBC8;
+    --color-50: #FFFAF0;
+}
+
+[data-theme='yellow'] {
+    --color-900: #5F370E;
+    --color-800: #744210;
+    --color-700: #975A16;
+    --color-600: #B7791F;
+    --color-500: #D69E2E;
+    --color-400: #ECC94B;
+    --color-300: #F6E05E;
+    --color-200: #FAF089;
+    --color-100: #FEFCBF;
+    --color-50: #FFFFF0;
+}
+
+[data-theme='green'] {
+    --color-900: #1C4532;
+    --color-800: #22543D;
+    --color-700: #276749;
+    --color-600: #2F855A;
+    --color-500: #38A169;
+    --color-400: #48BB78;
+    --color-300: #68D391;
+    --color-200: #9AE6B4;
+    --color-100: #C6F6D5;
+    --color-50: #F0FFF4;
+}
+
+[data-theme='teal'] {
+    --color-900: #1D4044;
+    --color-800: #234E52;
+    --color-700: #285E61;
+    --color-600: #2C7A7B;
+    --color-500: #319795;
+    --color-400: #38B2AC;
+    --color-300: #4FD1C5;
+    --color-200: #81E6D9;
+    --color-100: #B2F5EA;
+    --color-50: #E6FFFA;
+}
+
+[data-theme='blue'] {
+    --color-900: #1A365D;
+    --color-800: #2A4365;
+    --color-700: #2C5282;
+    --color-600: #2B6CB0;
+    --color-500: #3182CE;
+    --color-400: #4299E1;
+    --color-300: #63B3ED;
+    --color-200: #90CDF4;
+    --color-100: #BEE3F8;
+    --color-50: #EBF8FF;
+}
+
+[data-theme='cyan'] {
+    --color-900: #065666;
+    --color-800: #086F83;
+    --color-700: #0987A0;
+    --color-600: #00A3C4;
+    --color-500: #00B5D8;
+    --color-400: #0BC5EA;
+    --color-300: #76E4F7;
+    --color-200: #9DECF9;
+    --color-100: #C4F1F9;
+    --color-50: #EDFDFD;
 }
 
 [data-theme='purple'] {
@@ -37,15 +128,15 @@ html {
     --color-50: #FAF5FF;
 }
 
-[data-theme='blue'] {
-    --color-900: #1A365D;
-    --color-800: #2A4365;
-    --color-700: #2C5282;
-    --color-600: #2B6CB0;
-    --color-500: #3182CE;
-    --color-400: #4299E1;
-    --color-300: #63B3ED;
-    --color-200: #90CDF4;
-    --color-100: #BEE3F8;
-    --color-50: #EBF8FF;
+[data-theme='pink'] {
+    --color-900: #521B41;
+    --color-800: #702459;
+    --color-700: #97266D;
+    --color-600: #B83280;
+    --color-500: #D53F8C;
+    --color-400: #ED64A6;
+    --color-300: #F687B3;
+    --color-200: #FBB6CE;
+    --color-100: #FED7E2;
+    --color-50: #FFF5F7;
 }
