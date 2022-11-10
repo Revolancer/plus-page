@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
