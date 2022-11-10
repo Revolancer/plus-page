@@ -15,15 +15,16 @@ export default function PortfolioGallery ({ images }: { images: string[] }): JSX
       {images.map((image, i) => {
         if (i >= 9) { return <></> }
         return (
-            <a key={'portfolio_' + (i as unknown as string)} href={image} data-src={image} >
-              <Image src={image}
-                key={'portfolio_image_inner_' + (i as unknown as string)}
-                alt=""
-                style={{ objectFit: 'cover' }}
-                data-src={image}
-                borderRadius="16" overflow="hidden"
-                data-aspect-ratio='1/1' />
-            </a>
+          <>
+          <a href={image} data-src={image} >
+            <Image src={image}
+              alt=""
+              style={{ objectFit: 'cover' }}
+              data-src={image}
+              borderRadius="16" overflow="hidden"
+              data-aspect-ratio='1/1' />
+          </a>
+          </>
         )
       })}
     </LightGallery>

@@ -1,4 +1,11 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import {
+  Head,
+  Html,
+  Main,
+  NextScript
+
+  // @ts-expect-error imports
+} from 'next/dist/esm/pages/_document'
 import Script from 'next/script'
 
 export default function Document (): JSX.Element {

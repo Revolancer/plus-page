@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import UserProfile from '../components/user/profile'
 
 export interface SocialLink {
@@ -92,12 +93,7 @@ const getUser = async (username: string): Promise<User | null> => {
   return user
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, params }) => {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=60, stale-while-revalidate=86400'
-  )
-
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const username = params?.user as string
 
   const user = await getUser(username)
@@ -116,7 +112,13 @@ const UserPage = ({ user }: { user: User | null }): JSX.Element => {
   return (
     <>
       {(user != null) &&
+      <>
+      <Head>
+        <title>{user.name}</title>
+        <meta name="description" content={user.about} />
+      </Head>
       <UserProfile user={user} />
+      </>
       }
     </>
   )
