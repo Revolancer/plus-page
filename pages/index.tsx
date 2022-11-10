@@ -23,7 +23,7 @@ export default function Home (): JSX.Element {
       <Header {...registrationModal} />
       <Hero {...registrationModal} />
       <Container maxW="110rem" p={{ base: '8', lg: '16' }}>
-        <a id='features' className={styles.scrollto}></a>
+        <span tabIndex={-1} id='features' className={styles.scrollto}></span>
         <Flex direction="column" gap={{ base: '8', lg: '20' }} alignItems="center">
           <Text fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} align="center">Create your online home <Text as="span" bgClip="text" bgGradient="linear(to-br, orange.500, yellow.400)">for life.</Text></Text>
           <Text align="center">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</Text>
@@ -79,7 +79,7 @@ export default function Home (): JSX.Element {
           </Grid>
       </Container>
       <Container maxW="90rem" p={{ base: '8', lg: '16' }}>
-        <a id='pricing' className={styles.scrollto}></a>
+        <span tabIndex={-1} id='pricing' className={styles.scrollto}></span>
         <Flex direction="column" gap="4" p="4">
           <Text fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>Pricing</Text>
           <Text>Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</Text>

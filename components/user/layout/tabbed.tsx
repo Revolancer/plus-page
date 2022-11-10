@@ -23,14 +23,14 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
         <Box className={styles.profileBody}>
           <section ref={sectionRefs[0]}>
             <>
-            <a id="about" className={styles.scrollTo} />
+            <span tabIndex={-1} id="about" className={styles.scrollTo}></span>
             <Heading fontSize="2xl" mb="2">About Me</Heading>
             {user.about}
             </>
           </section>
           <section ref={sectionRefs[1]}>
             <>
-            <a id="portfolio" className={styles.scrollTo} />
+            <span tabIndex={-1} id="portfolio" className={styles.scrollTo}></span>
             <Heading fontSize="2xl" mb="2">My Portfolio</Heading>
             <PortfolioGallery images={user.portfolio} />
             </>
