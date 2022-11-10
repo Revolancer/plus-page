@@ -93,7 +93,12 @@ const getUser = async (username: string): Promise<User | null> => {
   return user
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ res, params }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=60, stale-while-revalidate=86400'
+  )
+
   const username = params?.user as string
 
   const user = await getUser(username)
