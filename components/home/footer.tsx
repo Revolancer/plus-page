@@ -21,13 +21,13 @@ export default function Footer (): JSX.Element {
               <Link href='#faq' className="smooth-scroll">
                 FAQs
               </Link>
-              <Link href='https://revolancer.com/terms-and-conditions/?utm_source=plus_page&utm_medium=landing_page&utm_campaign=landing_page'>
+              <Link target="_blank" href='https://revolancer.com/terms-and-conditions/?utm_source=plus_page&utm_medium=landing_page&utm_campaign=landing_page'>
                 Terms
               </Link>
-              <Link href='https://revolancer.com/impressum/?utm_source=plus_page&utm_medium=landing_page&utm_campaign=landing_page'>
+              <Link target="_blank" href='https://revolancer.com/impressum/?utm_source=plus_page&utm_medium=landing_page&utm_campaign=landing_page'>
                 Impressum
               </Link>
-              <Link href='https://revolancer.com/?utm_source=plus_page&utm_medium=landing_page&utm_campaign=landing_page'>
+              <Link target="_blank" href='https://revolancer.com/?utm_source=plus_page&utm_medium=landing_page&utm_campaign=landing_page'>
                 Revolancer
               </Link>
             </Flex>
