@@ -23,7 +23,7 @@ const RegistrationSchema = yup.object().shape({
 const submitForm = async (values: any, actions: any): Promise<void> => {
   values.captcha = captchaResponse
 
-  let result = { success: false }
+  let result = { success: false, error: 'Something went wrong' }
 
   try {
     const response = await fetch(apiHost + '/register/',
@@ -40,7 +40,7 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
   if (result?.success) {
     window.location.href = 'https://revolancer.com/login/'
   } else {
-    registrationError = 'Something went wrong...'
+    registrationError = result?.error
   }
   actions.setSubmitting(false)
 }
