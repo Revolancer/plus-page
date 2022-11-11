@@ -11,7 +11,7 @@ export default function Footer (): JSX.Element {
             <Box w="max">
             <Logo />
             </Box>
-            <Flex gap="8">
+            <Flex gap={{ base: '2', md: '8' }} direction={{ base: 'column', md: 'row' }} flexWrap="wrap">
               <Link href='#features' className="smooth-scroll">
                 Features
               </Link>
