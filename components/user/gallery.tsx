@@ -4,6 +4,8 @@ import { Image } from '@chakra-ui/react'
 
 import styles from '../../styles/gallery.module.css'
 
+const galleryKey = process.env.NEXT_PUBLIC_LIGHTGALLERY_LICENSE
+
 export default function PortfolioGallery ({ images }: { images: string[] }): JSX.Element {
   return (
     <>
@@ -11,6 +13,7 @@ export default function PortfolioGallery ({ images }: { images: string[] }): JSX
       speed={500}
       plugins={[lgThumbnail]}
       elementClassNames={styles.galleryContainer}
+      licenseKey={galleryKey}
     >
       {images.map((image, i) => {
         if (i >= 9) { return <></> }
