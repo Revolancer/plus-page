@@ -8,7 +8,10 @@ function DesktopNav (modal: any): JSX.Element {
         Features
       </Link>
       <Link href='#pricing' className="smooth-scroll">
-        Pricing
+        Plans &amp; Pricing
+      </Link>
+      <Link href='#faq' className="smooth-scroll">
+        FAQs
       </Link>
       <Spacer />
       <Button

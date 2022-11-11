@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Grid, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import phoneMock from '../../public/assets/home/phonemock2.png'
@@ -11,9 +11,9 @@ export default function Hero (modal: any): JSX.Element {
       <Container maxW='110rem' w="full" h="full" >
         <Grid templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }} w="full" h="full">
           <Flex p="12" w="full" maxW="50ch" h={{ base: 'max(200px, 45vh)', md: 'max(400px, 60vh)' }} justifyContent={{ md: 'center' }} direction="column" gap={{ base: '2', md: '4' }}>
-            <Text fontSize={{ base: '3xl', lg: '6xl' }} fontWeight="bold">
+            <Heading as="h1" fontSize={{ base: '3xl', lg: '6xl' }} fontWeight="bold">
               Claim your <Text as="span" bgClip="text" bgGradient="linear(to-r, #FF4D61, #FFB229)" filter="auto" brightness="90%">mini&nbsp;website</Text>
-            </Text>
+            </Heading>
             <Text>
               Ideal for freelancers, digital professionals, and those looking to get found online.
             </Text>

@@ -53,7 +53,19 @@ function MobileNav (modal: any): JSX.Element {
               bgColor: 'whiteAlpha.400'
             }}
           >
-            Pricing
+            Plans &amp; Pricing
+          </MenuItem>
+        </Link>
+        <Link href='#faq'>
+          <MenuItem
+            _focus={{
+              bgColor: 'black'
+            }}
+            _hover={{
+              bgColor: 'whiteAlpha.400'
+            }}
+          >
+            FAQs
           </MenuItem>
         </Link>
         <MenuItem as={Button}
