@@ -22,8 +22,9 @@ export default function Home (): JSX.Element {
   return (
     <>
     <Head>
-      <title>plus.page by Revolancer - Your digital home</title>
+      <title>plus.page by Revolancer - Claim your mini website</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="description" content="Claim your mini website with plus.page by Revolancer today - ideal for freelancers, digital professionals, and those looking to get found online." />
     </Head>
     <Box color="black" minW="100vw" minH="100vh">
       <Header {...registrationModal} />
