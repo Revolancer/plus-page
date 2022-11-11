@@ -4,10 +4,13 @@ import Image from 'next/image'
 import Header from '../components/home/header'
 import Hero from '../components/home/hero'
 
-import laptopMock from '../public/assets/home/laptopmock.png'
-import featIcon1 from '../public/assets/home/featicon1.png'
-import featIcon2 from '../public/assets/home/featicon2.png'
-import featIcon3 from '../public/assets/home/featicon3.png'
+import laptopMock from '../public/assets/home/laptopmock2.png'
+import featIcon1 from '../public/assets/home/feats1.png'
+import featIcon2 from '../public/assets/home/feats2.png'
+import featIcon3 from '../public/assets/home/feats3.png'
+import featIcon4 from '../public/assets/home/feats4.png'
+import featIcon5 from '../public/assets/home/feats5.png'
+import featIcon6 from '../public/assets/home/feats6.png'
 
 import styles from '../styles/Home.module.css'
 
@@ -23,17 +26,26 @@ export default function Home (): JSX.Element {
       <Header {...registrationModal} />
       <Hero {...registrationModal} />
       <Container maxW="110rem" p={{ base: '8', lg: '16' }}>
-        <span tabIndex={-1} id='features' className={styles.scrollto}></span>
-        <Flex direction="column" gap={{ base: '8', lg: '20' }} alignItems="center">
-          <Text fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} align="center">Create your online home <Text as="span" bgClip="text" bgGradient="linear(to-br, orange.500, yellow.400)">for life.</Text></Text>
-          <Text align="center">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</Text>
+        <Flex direction="column" gap={{ base: '8', lg: '12' }} alignItems="center">
+          <Text align="center">
+            <Text as="span" fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} align="center">Your online presence made <Text as="span" bgClip="text" bgGradient="linear(to-br, orange.500, yellow.400)">simple</Text></Text>
+            <br />
+            <Text as="span" fontWeight="bold" fontSize={{ base: 'xl', lg: '3xl' }} align="center">Designed for use on social media</Text>
+          </Text>
+          <Text align="center" maxW="70ch"><strong>The only link you need</strong> - put your best talents on display, wow your dream clients, dazzle them with your portfolio, and make it easy for them to connect with you.</Text>
+          <Text align="center">Plus Page can help you achieve just that!</Text>
           <Image
             src={laptopMock}
             alt="" />
+          <span tabIndex={-1} id='features' className={styles.scrollto}></span>
+          <Text fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} align="center">Your <Text as="span" bgClip="text" bgGradient="linear(to-br, #FF6752, #FFC021)">Plus Page</Text></Text>
           <Grid templateColumns={{ base: '1fr', lg: 'repeat(3,1fr)' }} gap="8" w="full" maxW="container.lg">
-            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon1} alt="" /><Text fontSize="xl" fontWeight="bold">Simplicity</Text><Text align="center">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</Text></Flex>
-            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon2} alt="" /><Text fontSize="xl" fontWeight="bold">Personalisation</Text><Text align="center">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</Text></Flex>
-            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon3} alt="" /><Text fontSize="xl" fontWeight="bold">Link-in-bio</Text><Text align="center">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</Text></Flex>
+            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon1} alt="" /><Text fontSize="xl" fontWeight="bold">Simple</Text><Text align="center">Simply register and add personal information, we&rsquo;ll take care of the rest.</Text></Flex>
+            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon2} alt="" /><Text fontSize="xl" fontWeight="bold">Personalised</Text><Text align="center">Make it your own by choosing a colour scheme and background of your choice.</Text></Flex>
+            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon3} alt="" /><Text fontSize="xl" fontWeight="bold">Contact Form</Text><Text align="center">Reel in your dream clients by making communication simple and hassle-free.</Text></Flex>
+            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon4} alt="" /><Text fontSize="xl" fontWeight="bold">About You</Text><Text align="center">Let your best qualities and talents shine in your About Me section.</Text></Flex>
+            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon5} alt="" /><Text fontSize="xl" fontWeight="bold">Portfolio</Text><Text align="center">Showcase images of your past work, so clients can see your skills straight away.</Text></Flex>
+            <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon6} alt="" /><Text fontSize="xl" fontWeight="bold">Social Media</Text><Text align="center">Show off your full digital presence by adding links to all your social media profiles in one place.</Text></Flex>
           </Grid>
         </Flex>
       </Container>
