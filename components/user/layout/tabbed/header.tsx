@@ -1,5 +1,4 @@
-import { Box, Button, Container, Flex, Heading, Text } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Button, Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
@@ -31,11 +30,12 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
         <Container maxW='30rem' p='0'>
           <Flex alignItems='top' gap='8'>
             <Box w="24" h="24" objectFit="cover" borderRadius="full" overflow="hidden" position="relative" flexShrink="0">
-              <Image fill src={user.avatar}
+            <Image src={user.avatar}
               alt={user.name + '\'s Profile Picture'}
-              priority={true}
-              sizes='240px'
-              style={{ objectFit: 'cover' }}/>
+              style={{ objectFit: 'cover' }}
+              data-src={user.avatar}
+              borderRadius="full" overflow="hidden"
+              data-aspect-ratio='1/1' />
             </Box>
             <Flex alignItems='top' gap='2' direction="column" flexGrow="1">
               <Flex direction={{ base: 'column', md: 'row' }} justifyContent={{ base: 'start', md: 'space-between' }} flexGrow="1">

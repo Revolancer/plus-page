@@ -20,13 +20,12 @@ const RegistrationSchema = yup.object().shape({
 let toast: any
 
 const submitForm = async (values: any, actions: any): Promise<void> => {
-  values.captcha = captchaResponse
-  values.user = theUser.slug
+  values['cf-turnstile-response'] = captchaResponse
 
   let result = { success: false }
 
   try {
-    const response = await fetch(apiHost + '/message/',
+    const response = await fetch(apiHost + '/user/' + theUser.slug + '/message/',
       {
         method: 'POST',
         headers: {

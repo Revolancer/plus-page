@@ -80,6 +80,10 @@ const getUser = async (username: string): Promise<User | null> => {
     user.socials = []
   }
 
+  if (!Array.isArray(user.socials)) {
+    user.socials = []
+  }
+
   if (typeof user.name === 'undefined') {
     user.name = username
   }
