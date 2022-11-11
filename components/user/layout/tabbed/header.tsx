@@ -31,6 +31,7 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
           <Flex alignItems='top' gap='8'>
             <Box w="24" h="24" objectFit="cover" borderRadius="full" overflow="hidden" position="relative" flexShrink="0">
             <Image src={user.avatar}
+              w="24" h="24"
               alt={user.name + '\'s Profile Picture'}
               style={{ objectFit: 'cover' }}
               data-src={user.avatar}
