@@ -1,24 +1,25 @@
-import { Box, Button, Container, Flex, Grid, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import phoneMock from '../../public/assets/home/phonemock.png'
+import phoneMock from '../../public/assets/home/phonemock2.png'
 
 export default function Hero (modal: any): JSX.Element {
   return (
     <>
-      <Box w="full" minH="60vh" position="relative" overflow="hidden">
+      <Box w="full" minH="60vh" h={{ base: 'max(500px, 75vh)', md: 'max(400px, 60vh)' }} position="relative" overflow="hidden">
       <Box w="full" h="full" backgroundColor="whiteAlpha.700" position="absolute">
       <Container maxW='110rem' w="full" h="full" >
-        <Grid templateColumns={{ base: '1fr', lg: 'repeat(2,1fr)' }} w="full" h="full" >
-          <Flex p="12" w="full" h="full" justifyContent={{ md: 'center' }} direction="column" gap="4">
-            <Text fontSize={{ base: '3xl', lg: '6xl' }} fontWeight="bold">
-              Looking to set up a website?
-            </Text>
+        <Grid templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }} w="full" h="full">
+          <Flex p="12" w="full" maxW="50ch" h={{ base: 'max(200px, 45vh)', md: 'max(400px, 60vh)' }} justifyContent={{ md: 'center' }} direction="column" gap={{ base: '2', md: '4' }}>
+            <Heading as="h1" fontSize={{ base: '3xl', lg: '6xl' }} fontWeight="bold">
+              Claim your <Text as="span" bgClip="text" bgGradient="linear(to-r, #FF4D61, #FFB229)" filter="auto" brightness="90%">mini&nbsp;website</Text>
+            </Heading>
             <Text>
-              Don&rsquo;t! Do this instead - it&rsquo;s quicker, cheaper, easier
+              Ideal for freelancers, digital professionals, and those looking to get found online.
             </Text>
             <Button
-              mt="6"
+              flexShrink={0}
+              mt={{ base: '2', md: '6' }}
               onClick={modal.onOpen}
               bgGradient='linear(to-tl, rvyellow, rvmagenta)'
               _focus={{
@@ -42,7 +43,7 @@ export default function Hero (modal: any): JSX.Element {
               Get Started
             </Button>
           </Flex>
-          <Flex direction="column" justifyContent="end">
+          <Flex direction="column" justifyContent="end" pt="4">
             <Image
               src={phoneMock}
               alt=""
