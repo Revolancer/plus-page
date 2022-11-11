@@ -22,7 +22,7 @@ export interface User {
 }
 
 const getUser = async (username: string): Promise<User | null> => {
-  const apiEndpoint: string = (process.env.NEXT_PUBLIC_PAGES_API_HOST as string) + '/users/'
+  const apiEndpoint: string = (process.env.NEXT_PUBLIC_PAGES_API_HOST as string) + '/user/'
   const url = apiEndpoint + username
   let body: any = { exists: false }
   try {
@@ -39,16 +39,18 @@ const getUser = async (username: string): Promise<User | null> => {
   const user: User = {
     slug: username,
     hasPlus: body.plus,
-    portfolio: body.portfolio,
-    avatar: body.profileImage,
+    portfolio: body.folio,
+    avatar: body.avatar,
     backgroundImage: body.backgroundImage,
     colorScheme: body.colourScheme,
-    about: body.description,
+    about: body.desc,
     socials: body.socials,
-    name: body.displayname,
+    name: body.displayName,
     tagline: body.tagline,
     layout: body.layout
   }
+
+  console.log(user)
 
   if (typeof user.hasPlus === 'undefined') {
     user.hasPlus = false
