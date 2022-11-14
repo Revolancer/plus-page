@@ -35,7 +35,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
             <PortfolioGallery images={user.portfolio} />
           </section>
           }
-          <Text width="full" align="center" mt="12">
+          <Text width="full" align="center" className={styles.attribution}>
             <Link href="/" fontWeight="semibold">Made with plus.page</Link>
           </Text>
         </Box>

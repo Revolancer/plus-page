@@ -20,7 +20,9 @@ span.scrollTo {
     margin-inline: 1rem;
     padding-inline: 1rem;
     padding-block-start: 1rem;
-    padding-block-end: 4rem;
+    padding-block-end: 9rem;
+    min-height: calc(100vh - 188px);
+    position: relative;
 }
 
 .profileBody > section {
@@ -33,6 +35,12 @@ span.scrollTo {
     .profileBody {
         margin-inline: 0;
     }
+}
+
+.attribution {
+    position: absolute;
+    left: 0;
+    bottom: 4rem;
 }
 
 h1.heading {
