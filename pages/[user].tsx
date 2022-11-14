@@ -42,16 +42,16 @@ const getUser = async (username: string): Promise<User | null> => {
     hasPlus: body.plus,
     portfolio: body.folio,
     avatar: body.avatar,
-    backgroundImage: body.backgroundImage,
+    backgroundImage: body.bgImage,
     colorScheme: body.colourScheme,
     about: body.desc,
     socials: body.socials,
     name: body.displayName,
-    tagline: body.tagline,
+    tagline: body.tagLine,
     layout: body.layout
   }
 
-  console.log(user)
+  console.log(body)
 
   if (typeof user.hasPlus === 'undefined') {
     user.hasPlus = false
@@ -103,10 +103,10 @@ const getUser = async (username: string): Promise<User | null> => {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res, params }) => {
-  res.setHeader(
+  /* res.setHeader(
     'Cache-Control',
     'public, s-maxage=60, stale-while-revalidate=86400'
-  )
+  ) */
 
   const username = params?.user as string
 
