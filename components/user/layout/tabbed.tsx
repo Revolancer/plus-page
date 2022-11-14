@@ -18,7 +18,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
   return (
     <>
     <ContactForm modal={modal} styles={styles} user={user} />
-    <Box w="full" h="full" backgroundImage={user.backgroundImage} backgroundPosition="top" backgroundSize="cover" backgroundAttachment="fixed" backgroundRepeat="no-repeat">
+    <Box w="full" h="full">
       <Header user={user} sectionRefs={sectionRefs} modal={modal} />
       <Container maxW='container.md'>
         <Box className={styles.profileBody}>
@@ -44,6 +44,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
       </Container>
     </Box>
     <Link href="https://revolancer.com/my-account/settings/plus-page/" target="_blank">
+    <Box position="fixed" top={0} left={0} width="100vw" height="100vh" zIndex="-1" backgroundImage={user.backgroundImage} backgroundPosition="top" backgroundSize="cover" backgroundAttachment="fixed" backgroundRepeat="no-repeat"></Box>
     <Button position="fixed" bottom="4" left="4" className={styles.editButton} leftIcon={<FaPencilAlt />}>Customise</Button>
     </Link>
     </>
