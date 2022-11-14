@@ -14,7 +14,7 @@ const RegistrationSchema = yup.object().shape({
     .label('Your plus.page address')
     .min(3)
     .max(20)
-    .matches(/^[a-z-]+$/, 'Your plus.page address can only contain letters, numbers, and the dash symbol (-)')
+    .matches(/^[A-Za-z0-9-]+$/, 'Your plus.page address can only contain letters, numbers, and the dash symbol (-)')
     .required(),
   email: yup.string().label('Email address').email().required(),
   password: yup.string().label('Password').password().required()
