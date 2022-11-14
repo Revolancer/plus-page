@@ -17,13 +17,28 @@ export default function UserProfile ({ user }: { user: User }): JSX.Element {
   }
 
   switch (user.colorScheme) {
+    case 'gray':
+      break
+    case 'red':
+      break
+    case 'orange':
+      break
+    case 'yellow':
+      break
+    case 'green':
+      break
+    case 'teal':
+      break
     case 'blue':
+      break
+    case 'cyan':
       break
     case 'purple':
       break
-    case 'red':
+    case 'pink':
+      break
     default:
-      user.colorScheme = 'red'
+      user.colorScheme = 'gray'
   }
 
   const contactModal = useDisclosure()
