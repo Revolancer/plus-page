@@ -25,13 +25,22 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
   let result = { success: false }
 
   try {
+    const formBody = []
+    for (const key in values) {
+      formBody.push(
+        encodeURIComponent(key) +
+        '=' +
+        encodeURIComponent(values[key])
+      )
+    }
+    const formBodyStr = formBody.join('&')
     const response = await fetch(apiHost + '/user/' + theUser.slug + '/message',
       {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
-        body: JSON.stringify(values)
+        body: formBodyStr
       })
     result = await response.json()
   } catch {
