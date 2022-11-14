@@ -1,4 +1,4 @@
-import { Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text } from '@chakra-ui/react'
+import { Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useToast } from '@chakra-ui/react'
 import { Field, Form, Formik } from 'formik'
 import * as yup from 'yup'
 import YupPassword from 'yup-password'
@@ -20,6 +20,9 @@ const RegistrationSchema = yup.object().shape({
   password: yup.string().label('Password').password().required()
 })
 
+let toast: any
+let theModal: any
+
 const submitForm = async (values: any, actions: any): Promise<void> => {
   values.captcha = captchaResponse
 
@@ -38,7 +41,15 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
   } catch {
   }
   if (result?.success) {
-    window.location.href = 'https://revolancer.com/login/'
+    theModal.onClose()
+
+    toast({
+      title: 'Account created',
+      description: 'Your account has been created. Please check for an email from Revolancer to verify your email address and get started.',
+      status: 'success',
+      duration: 9000,
+      isClosable: true
+    })
   } else {
     registrationError = result?.error
   }
@@ -50,6 +61,9 @@ let registrationError: string
 let captchaResponse: string
 
 export default function RegistrationForm (modal: any): JSX.Element {
+  theModal = modal
+
+  toast = useToast()
   return (
     <>
       <Modal closeOnOverlayClick={false} isOpen={modal.isOpen} onClose={modal.onClose}>
