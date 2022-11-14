@@ -10,7 +10,7 @@ const apiHost = process.env.NEXT_PUBLIC_PAGES_API_HOST as string
 const captchaSitekey = process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY as string
 
 const RegistrationSchema = yup.object().shape({
-  url: yup.string()
+  username: yup.string()
     .label('Your plus.page address')
     .min(3)
     .max(20)
@@ -78,7 +78,7 @@ export default function RegistrationForm (modal: any): JSX.Element {
         <ModalHeader>Get started</ModalHeader>
         <ModalCloseButton />
           <Formik
-            initialValues={{ url: '', email: '', password: '' }}
+            initialValues={{ username: '', email: '', password: '' }}
             onSubmit={submitForm}
             validationSchema={RegistrationSchema}
           >
@@ -86,17 +86,17 @@ export default function RegistrationForm (modal: any): JSX.Element {
               <Form>
                 <ModalBody pb={6}>
                   <Flex direction="column" gap="4" alignItems="center">
-                    <Field name='url'>
+                    <Field name='username'>
                       {({ field, form }: { form: any, field: any }) => (
-                        <FormControl isInvalid={form.errors.url as boolean && form.touched.url as boolean}>
+                        <FormControl isInvalid={form.errors.username as boolean && form.touched.username as boolean}>
                           <FormLabel>Address</FormLabel>
                           <InputGroup>
                             <InputLeftAddon>
                               plus.page/
                             </InputLeftAddon>
-                            <Input {...field} placeholder='url' />
+                            <Input {...field} placeholder='username' />
                           </InputGroup>
-                          <FormErrorMessage>{form.errors.url}</FormErrorMessage>
+                          <FormErrorMessage>{form.errors.username}</FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
