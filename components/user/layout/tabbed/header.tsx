@@ -46,7 +46,7 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
                   <Heading fontSize="xl" fontWeight="bold" as="h1" className={styles.heading}>{user.name.replace(/\u00a0/g, ' ')}</Heading>
                   {user.tagline as unknown as boolean && <Text className={styles.tagline}>{user.tagline}</Text>}
                 </Flex>
-                <Flex direction="row" wrap="wrap" className={styles.socialIcons} gap="0.5">
+                <Flex direction="row" wrap="wrap" className={styles.socialIcons} gap="1">
                   {user.socials.map((link, i) => {
                     if (i >= 7) return (<></>)
                     return <SocialLinkIcon link={link} key={'socials_' + (i as unknown as string)} />
