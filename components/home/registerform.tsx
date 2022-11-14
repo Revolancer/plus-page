@@ -1,5 +1,5 @@
 import { Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useToast } from '@chakra-ui/react'
-import { Field, Form, Formik } from 'formik'
+import { Field, Form, Formik, isObject } from 'formik'
 import * as yup from 'yup'
 import YupPassword from 'yup-password'
 import Turnstile from 'react-turnstile'
@@ -26,7 +26,7 @@ let theModal: any
 const submitForm = async (values: any, actions: any): Promise<void> => {
   values.captcha = captchaResponse
 
-  let result = { success: false, error: 'Something went wrong' }
+  let result: { success: boolean, errors: any } = { success: false, errors: { 1: 'Something went wrong' } }
 
   try {
     const response = await fetch(apiHost + '/register',
@@ -51,7 +51,13 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
       isClosable: true
     })
   } else {
-    registrationError = result?.error
+    let errorMessage = ''
+    if (isObject(result?.errors)) {
+      for (const field in result.errors) {
+        errorMessage += result.errors[field] as string + '\n '
+      }
+    }
+    registrationError = errorMessage
   }
   actions.setSubmitting(false)
 }
@@ -118,7 +124,7 @@ export default function RegistrationForm (modal: any): JSX.Element {
                       onVerify={(token) => { captchaResponse = token }} />
                     {
                       registrationError as unknown as boolean &&
-                      <Text color="red.500">
+                      <Text color="red.500" whiteSpace="pre-line">
                         {registrationError}
                       </Text>
                     }
