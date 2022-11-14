@@ -3,10 +3,11 @@ import Header from './tabbed/header'
 import { useRef } from 'react'
 
 import styles from '../../../styles/themes/tabbed.module.css'
-import { Box, Container, Heading, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
 import ContactForm from '../contactform'
+import { FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
 
 export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.Element {
   const sectionRefs = [
@@ -36,11 +37,15 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
           </section>
           }
           <Text width="full" align="center" className={styles.attribution}>
-            <Link href="/" fontWeight="semibold">Made with plus.page</Link>
+            <Link href="/" fontWeight="semibold">Made with plus.page</Link><br />
+            <Link fontSize="xs" href="https://revolancer.com/my-account/settings/plus-page/" target="_blank" rel="nofollow" className={styles.loginEditLink}>Log in to customise <FaExternalLinkAlt style={{ display: 'inline-block' }} /></Link>
           </Text>
         </Box>
       </Container>
     </Box>
+    <Link href="https://revolancer.com/my-account/settings/plus-page/" target="_blank">
+    <Button position="fixed" bottom="4" left="4" className={styles.editButton} leftIcon={<FaPencilAlt />}>Customise</Button>
+    </Link>
     </>
   )
 }

@@ -83,3 +83,17 @@ button.contactSubmitButton:hover, button.contactSubmitButton:active, button.cont
     background: var(--color-600);
     color: white;
 }
+
+a.loginEditLink{
+    color: var(--color-500);
+}
+
+button.editButton {
+    background: var(--color-500);
+    color: white;
+}
+
+button.editButton:hover, button.editButton:active, button.editButton:focus {
+    background: var(--color-600);
+    color: white;
+}
