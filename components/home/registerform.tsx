@@ -29,7 +29,7 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
   let result = { success: false, error: 'Something went wrong' }
 
   try {
-    const response = await fetch(apiHost + '/register/',
+    const response = await fetch(apiHost + '/register',
       {
         method: 'POST',
         headers: {
