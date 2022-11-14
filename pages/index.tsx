@@ -106,7 +106,7 @@ export default function Home (): JSX.Element {
                 <Flex alignItems="center">
                   <Text as="span" fontSize="lg" fontWeight="semibold">Total:</Text>
                   <Spacer />
-                  <Text fontWeight="bold" fontSize="2xl" bgClip="text" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" filter="auto">£3000 + £800/year</Text>
+                  <Text fontWeight="bold" fontSize="2xl" bgClip="text" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" filter="auto">£3000 + £800<Text as="span" fontSize="md">/year</Text></Text>
                 </Flex>
               </Flex>
             </Flex>
