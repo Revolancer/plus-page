@@ -26,7 +26,7 @@ let theModal: any
 const submitForm = async (values: any, actions: any): Promise<void> => {
   values.captcha = captchaResponse
 
-  let result: { success: boolean, errors: any } = { success: false, errors: { 1: 'Something went wrong' } }
+  let result: { success: boolean, errors: any, error?: string | null } = { success: false, errors: { 1: 'Something went wrong' } }
 
   try {
     const formBody = []
@@ -65,6 +65,9 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
       for (const field in result.errors) {
         errorMessage += result.errors[field] as string + '\n '
       }
+    }
+    if (typeof result?.error === 'string') {
+      errorMessage += result.error + '\n '
     }
     registrationError = errorMessage
   }
