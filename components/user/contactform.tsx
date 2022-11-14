@@ -25,7 +25,7 @@ const submitForm = async (values: any, actions: any): Promise<void> => {
   let result = { success: false }
 
   try {
-    const response = await fetch(apiHost + '/user/' + theUser.slug + '/message/',
+    const response = await fetch(apiHost + '/user/' + theUser.slug + '/message',
       {
         method: 'POST',
         headers: {
