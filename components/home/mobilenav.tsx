@@ -68,6 +68,18 @@ function MobileNav (modal: any): JSX.Element {
             FAQs
           </MenuItem>
         </Link>
+        <Link href='https://revolancer.com/login/' target="_blank">
+          <MenuItem
+            _focus={{
+              bgColor: 'black'
+            }}
+            _hover={{
+              bgColor: 'whiteAlpha.400'
+            }}
+          >
+            Log in
+          </MenuItem>
+        </Link>
         <MenuItem as={Button}
           onClick={modal.onOpen}
           bgGradient='linear(to-tl, rvyellow, rvmagenta)'
