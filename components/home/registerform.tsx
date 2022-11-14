@@ -24,7 +24,7 @@ let toast: any
 let theModal: any
 
 const submitForm = async (values: any, actions: any): Promise<void> => {
-  values.captcha = captchaResponse
+  values['cf-turnstile-response'] = captchaResponse
 
   let result: { success: boolean, errors: any, error?: string | null } = { success: false, errors: { 1: 'Something went wrong' } }
 
