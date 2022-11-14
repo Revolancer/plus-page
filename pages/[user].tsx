@@ -97,7 +97,7 @@ const getUser = async (username: string): Promise<User | null> => {
     user.layout = 'advanced'
   }
 
-  user.about = user.about.replace(/<br\s*[/]?>/gi, '\n')
+  user.about = user.about.replace(/(<([^>]+)>)/gi, '')
 
   return user
 }
