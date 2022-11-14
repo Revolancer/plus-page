@@ -230,8 +230,8 @@ export default function Home (): JSX.Element {
             </Flex>
           </Grid>
         </Flex>
-        <Box w="full" h="full" position="absolute" top={0} left={0} overflow="hidden">
-        <Box w="full" h="full" position="absolute" top={0} left={0} zIndex={-1}
+        <Box w="full" h="full" position="absolute" top={0} left={0} overflow="hidden" zIndex={-1}>
+        <Box w="full" h="full" position="absolute" top={0} left={0}
         filter="auto" blur="30px" brightness="110%">
           <Box w="80%" height="100%" position="absolute" top="50%" left="10%" borderRadius="full" backgroundColor="orange.500"
                 bgGradient='linear(to-tl, rvyellow, rvmagenta)' />
