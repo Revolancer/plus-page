@@ -67,8 +67,10 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
               <Link
               href="#about"
               className={(activeSection === 0 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>About Me</Link>
+              {user.portfolio.length > 0 &&
               <Link href="#portfolio"
               className={(activeSection === 1 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>Portfolio</Link>
+              }
             </nav>
           </Flex>
         </Container>

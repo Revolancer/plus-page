@@ -28,13 +28,13 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
             {user.about}
             </>
           </section>
+          {user.portfolio.length > 0 &&
           <section ref={sectionRefs[1]}>
-            <>
             <span tabIndex={-1} id="portfolio" className={styles.scrollTo}></span>
             <Heading fontSize="2xl" mb="2">My Portfolio</Heading>
             <PortfolioGallery images={user.portfolio} />
-            </>
           </section>
+          }
           <Text width="full" align="center" mt="12">
             <Link href="/" fontWeight="semibold">Made with plus.page</Link>
           </Text>
