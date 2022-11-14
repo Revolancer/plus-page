@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { updateImageUrl } from '../components/helpers'
+import { unescapeHTML, updateImageUrl } from '../components/helpers'
 import UserProfile from '../components/user/profile'
 
 export interface SocialLink {
@@ -98,6 +98,10 @@ const getUser = async (username: string): Promise<User | null> => {
   }
 
   user.about = user.about.replace(/(<([^>]+)>)/gi, '')
+
+  user.about = unescapeHTML(user.about)
+  user.name = unescapeHTML(user.name)
+  user.tagline = unescapeHTML(user.tagline)
 
   return user
 }
