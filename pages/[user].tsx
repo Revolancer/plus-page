@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import ProfileGraph from '../components/user/opengraph'
+import { updateImageUrl } from '../components/helpers'
 import UserProfile from '../components/user/profile'
 
 export interface SocialLink {
@@ -121,6 +121,11 @@ const UserPage = ({ user }: { user: User | null }): JSX.Element => {
     }
   }
 
+  let avatar = ''
+
+  if (user != null) {
+    avatar = updateImageUrl(user.avatar)
+  }
   return (
     <>
       {(user != null) &&
@@ -128,7 +133,10 @@ const UserPage = ({ user }: { user: User | null }): JSX.Element => {
       <Head>
         <title>{user.name}</title>
         <meta name="description" content={user.about} />
-        <ProfileGraph user={user} />
+        <meta name="og:type" property="og:type" content="website" />
+        <meta name="og:image" property="og:image" content={avatar} />
+        <meta name="og:title" property="og:title" content={user.name} />
+        <meta name="og:description" property="og:description" content={user.about} />
       </Head>
       <UserProfile user={user} />
       </>
