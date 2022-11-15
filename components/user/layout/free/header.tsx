@@ -52,7 +52,7 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
               <Flex direction={{ base: 'column', md: 'row' }} justifyContent={{ base: 'start', md: 'space-between' }} flexGrow="1">
                 <Flex direction="column" gap="2">
                   <Heading fontSize="xl" fontWeight="bold" as="h1" className={styles.heading}>{user.name.replace(/\u00a0/g, ' ')}</Heading>
-                  <Text className={styles.tagline}><Link href={`https://revolancer.com/?ref=${user.slug}`}>Freelancer on <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link></Text>
+                  <Text className={styles.tagline}><Link href={`https://revolancer.com/user/${user.slug}?ref=${user.slug}`}>Freelancer on <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link></Text>
                 </Flex>
               </Flex>
               <Button
