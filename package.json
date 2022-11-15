@@ -13,6 +13,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "cookies-next": "^2.1.1",
     "formik": "^2.2.9",
     "framer-motion": "^6",
     "lightgallery": "^2.7.0",

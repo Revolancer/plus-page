@@ -55,7 +55,7 @@ export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Elem
             >
               Request a project
             </Button> <br /><br />
-            <Link href={`/?ref=${user.slug}`} fontWeight="semibold">Want a website like this? Claim your <strong>plus.page</strong> today!</Link><br />
+            <Link href="/" fontWeight="semibold">Want a website like this? Claim your <strong>plus.page</strong> today!</Link><br />
             <Link href={`https://revolancer.com/?ref=${user.slug}`} fontWeight="semibold">Made by <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link>
           </Text>
         </Box>

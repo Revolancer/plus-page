@@ -3,6 +3,8 @@ import { User } from '../../pages/[user]'
 import FreeLayout from './layout/free'
 import TabbedLayout from './layout/tabbed'
 
+import { setCookie } from 'cookies-next'
+
 export interface UserProfileProps {
   user: User
   modal: any
@@ -52,6 +54,8 @@ export default function UserProfile ({ user }: { user: User }): JSX.Element {
   if (typeof document !== 'undefined') {
     document.body.dataset.theme = user.colorScheme
   }
+
+  setCookie('referrer', user.slug)
 
   return (
     <Box data-theme={user.colorScheme}>

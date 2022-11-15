@@ -4,6 +4,8 @@ import * as yup from 'yup'
 import YupPassword from 'yup-password'
 import Turnstile from 'react-turnstile'
 
+import { hasCookie, getCookie } from 'cookies-next'
+
 YupPassword(yup)
 
 const apiHost = process.env.NEXT_PUBLIC_PAGES_API_HOST as string
@@ -25,6 +27,10 @@ let theModal: any
 
 const submitForm = async (values: any, actions: any): Promise<void> => {
   values['cf-turnstile-response'] = captchaResponse
+
+  if (hasCookie('referrer')) {
+    values.referrer = getCookie('referrer')
+  }
 
   let result: { success: boolean, errors: any, error?: string | null } = { success: false, errors: { 1: 'Something went wrong' } }
 
