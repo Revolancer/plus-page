@@ -33,7 +33,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
           <section ref={sectionRefs[1]}>
             <span tabIndex={-1} id="portfolio" className={styles.scrollTo}></span>
             <Heading fontSize="2xl" mb="2">My Portfolio</Heading>
-            <PortfolioGallery images={user.portfolio} />
+            <PortfolioGallery images={user.portfolio} max={9} />
           </section>
           }
           <Text width="full" align="center" className={styles.attribution}>
