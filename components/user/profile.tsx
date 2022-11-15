@@ -1,5 +1,6 @@
 import { Box, useDisclosure } from '@chakra-ui/react'
 import { User } from '../../pages/[user]'
+import FreeLayout from './layout/free'
 import TabbedLayout from './layout/tabbed'
 
 export interface UserProfileProps {
@@ -14,6 +15,10 @@ export default function UserProfile ({ user }: { user: User }): JSX.Element {
     case 'tabs':
     default:
       ProfileLayout = TabbedLayout
+  }
+
+  if (!user.hasPlus) {
+    ProfileLayout = FreeLayout
   }
 
   switch (user.colorScheme) {
