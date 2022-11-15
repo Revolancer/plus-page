@@ -1,0 +1,76 @@
+a.sectionLink {
+    color: var(--chakra-colors-gray-600);
+    padding: 8px;
+    display: inline-block;
+}
+
+a.sectionLinkActive {
+    font-weight: 600;
+    color: var(--chakra-colors-rvnavy);
+    border-bottom: 4px solid var(--chakra-colors-rvnavy);
+}
+
+span.scrollTo {
+    scroll-margin-top: 190px;
+}
+
+.profileBody {
+    background-color: var(--chakra-colors-rvnavywhite);
+    color: var(--chakra-colors-rvnavy);
+    margin-inline: 1rem;
+    padding-inline: 1rem;
+    padding-block-start: 1rem;
+    padding-block-end: 16rem;
+    min-height: calc(100vh - 188px);
+    position: relative;
+}
+
+.profileBody > section {
+    max-width: 30rem;
+    margin-inline: auto;
+    padding-block-end: 1rem;
+    white-space: pre-line;
+}
+
+@media only screen and (min-width: 56em) {
+    .profileBody {
+        margin-inline: 0;
+    }
+}
+
+.attribution {
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+
+h1.heading {
+    color: var(--chakra-colors-rvnavy);
+}
+
+.tagline {
+    color: var(--chakra-colors-rvnavy);
+    font-size: 0.8rem;
+}
+
+button.contactButton {
+    background: var(--chakra-colors-rvmagenta);
+    color: white;
+}
+
+button.contactButton:hover, button.contactButton:active, button.contactButton:focus {
+    background: var(--chakra-colors-rvmagenta);
+    filter: brightness(90%);
+    color: white;
+}
+
+button.editButton {
+    background: var(--chakra-colors-rvmagenta);
+    color: white;
+}
+
+button.editButton:hover, button.editButton:active, button.editButton:focus {
+    background: var(--chakra-colors-rvmagenta);
+    filter: brightness(90%);
+    color: white;
+}

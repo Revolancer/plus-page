@@ -1,15 +1,26 @@
 import { UserProfileProps } from '../profile'
-import Header from './tabbed/header'
+import Header from './free/header'
 import { useRef } from 'react'
 
-import styles from '../../../styles/themes/tabbed.module.css'
+import styles from '../../../styles/themes/free.module.css'
 import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
 import ContactForm from '../contactform'
-import { FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
+import { FaEnvelope, FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
+import { User } from '../../../pages/[user]'
+
+let thisUser: User
+
+function contactPressed (): void {
+  if (typeof window !== 'undefined') {
+    window.location.href = `https://revolancer.com/project-request/?ref=${thisUser.slug}`
+  }
+}
 
 export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Element {
+  thisUser = user
+
   const sectionRefs = [
     useRef(null),
     useRef(null)
@@ -17,7 +28,6 @@ export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Elem
 
   return (
     <>
-    <ContactForm modal={modal} styles={styles} user={user} />
     <Box w="full" h="full">
       <Header user={user} sectionRefs={sectionRefs} modal={modal} />
       <Container maxW='container.md'>
@@ -33,18 +43,29 @@ export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Elem
           <section ref={sectionRefs[1]}>
             <span tabIndex={-1} id="portfolio" className={styles.scrollTo}></span>
             <Heading fontSize="2xl" mb="2">My Portfolio</Heading>
-            <PortfolioGallery images={user.portfolio} />
+            <PortfolioGallery images={user.portfolio} max={3} />
           </section>
           }
           <Text width="full" align="center" className={styles.attribution}>
-            <Link href="/" fontWeight="semibold">Made with plus.page</Link><br />
-            <Link fontSize="xs" href="https://revolancer.com/my-account/settings/plus-page/" target="_blank" rel="nofollow" className={styles.loginEditLink}>Log in to customise <FaExternalLinkAlt style={{ display: 'inline-block' }} /></Link>
+            <Button
+              onClick={contactPressed}
+              className={styles.contactButton}
+              leftIcon={<FaEnvelope />}
+              size={{ base: 'xs', md: 'sm' }}
+              w="max"
+            >
+              Request a project
+            </Button> <br /><br />
+            <Link href={`/?ref=${user.slug}`} fontWeight="semibold">Want a website like this? Claim your <strong>plus.page</strong> today!</Link><br />
+            <Link href={`https://revolancer.com/?ref=${user.slug}`} fontWeight="semibold">Made by <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link>
           </Text>
         </Box>
       </Container>
     </Box>
     <Link href="https://revolancer.com/my-account/settings/plus-page/" target="_blank">
-    <Box position="fixed" top={0} left={0} width="100vw" height="100vh" zIndex="-1" backgroundImage={user.backgroundImage} backgroundPosition="top" backgroundSize="cover" backgroundAttachment="fixed" backgroundRepeat="no-repeat"></Box>
+    <Box position="fixed" top={0} left={0} width="100vw" height="100vh" zIndex="-1" overflow="hidden">
+      <Box position="fixed" top="-10vh" left="-10vw" width="120vw" height="120vh" backgroundImage="/assets/free/background.png" backgroundPosition="top" backgroundSize="cover" backgroundAttachment="fixed" backgroundRepeat="no-repeat"></Box>
+    </Box>
     <Button position="fixed" bottom="4" left="4" className={styles.editButton} leftIcon={<FaPencilAlt />}>Customise</Button>
     </Link>
     </>

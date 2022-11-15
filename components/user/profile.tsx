@@ -19,6 +19,7 @@ export default function UserProfile ({ user }: { user: User }): JSX.Element {
 
   if (!user.hasPlus) {
     ProfileLayout = FreeLayout
+    user.colorScheme = 'gray'
   }
 
   switch (user.colorScheme) {
