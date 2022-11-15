@@ -6,8 +6,7 @@ import styles from '../../../styles/themes/free.module.css'
 import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
-import ContactForm from '../contactform'
-import { FaEnvelope, FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
+import { FaEnvelope, FaPencilAlt } from 'react-icons/fa'
 import { User } from '../../../pages/[user]'
 
 let thisUser: User
