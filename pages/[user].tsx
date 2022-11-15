@@ -119,7 +119,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res, params }) =>
 }
 
 const UserPage = ({ user }: { user: User | null }): JSX.Element => {
-  if (user === null || !user.hasPlus) {
+  if (user === null) {
     if (typeof window !== 'undefined') {
       window.location.href = '/'
     }

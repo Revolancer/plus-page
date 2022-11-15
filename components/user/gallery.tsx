@@ -7,7 +7,7 @@ import { updateImageUrl } from '../helpers'
 
 const galleryKey = process.env.NEXT_PUBLIC_LIGHTGALLERY_LICENSE
 
-export default function PortfolioGallery ({ images }: { images: string[] }): JSX.Element {
+export default function PortfolioGallery ({ images, max = 9 }: { images: string[], max?: number }): JSX.Element {
   return (
     <>
     <LightGallery
@@ -17,7 +17,7 @@ export default function PortfolioGallery ({ images }: { images: string[] }): JSX
       licenseKey={galleryKey}
     >
       {images.map((image, i) => {
-        if (i >= 9) { return <></> }
+        if (i >= max) { return <></> }
         const imageUrl = updateImageUrl(image)
         return (
           <>
@@ -27,7 +27,8 @@ export default function PortfolioGallery ({ images }: { images: string[] }): JSX
               style={{ objectFit: 'cover' }}
               data-src={imageUrl}
               borderRadius="16" overflow="hidden"
-              data-aspect-ratio='1/1' />
+              data-aspect-ratio='1/1'
+              loading='lazy' />
           </a>
           </>
         )
