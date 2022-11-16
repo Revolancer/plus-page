@@ -1,3 +1,10 @@
+# *
 User-agent: *
-Disallow: 
+Allow: /
+
+# Host
+Host: https://plus.page
+
+# Sitemaps
 Sitemap: https://plus.page/sitemap.xml
+Sitemap: https://plus.page/sitemap-pages.xml
