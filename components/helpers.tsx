@@ -31,6 +31,10 @@ export function unescapeHTML (str: string): string {
 }
 
 export function getThumb (url: string): string {
+  if (url === 'https://revolancer.com/data/themes/topwork/assets/images/avatar-placeholder.png') {
+    return url
+  }
+
   url = url.replace('-scaled.', '.')
   const extensionStart = url.lastIndexOf('.')
   return `${url.slice(0, extensionStart)}-150x150${url.slice(extensionStart)}`
