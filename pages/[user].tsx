@@ -25,7 +25,7 @@ export interface User {
 const getUser = async (username: string): Promise<User | null> => {
   const apiEndpoint: string = (process.env.NEXT_PUBLIC_PAGES_API_HOST as string) + '/user/'
   const url = apiEndpoint + username
-  let body: any = { exists: false }
+  let body: { [key: string]: any } = { exists: false }
   try {
     const response = await fetch(url)
     body = await response.json()
@@ -37,9 +37,13 @@ const getUser = async (username: string): Promise<User | null> => {
     return null
   }
 
+  if (!(body.enabled as boolean)) {
+    return null
+  }
+
   const user: User = {
     slug: username,
-    hasPlus: body.plus,
+    hasPlus: body.plus === true,
     portfolio: body.folio,
     avatar: body.avatar,
     backgroundImage: body.bgImage,
@@ -51,48 +55,40 @@ const getUser = async (username: string): Promise<User | null> => {
     layout: body.layout
   }
 
-  if (typeof user.hasPlus === 'undefined') {
-    user.hasPlus = false
-  }
-
-  if (typeof user.portfolio === 'undefined') {
+  if (!Array.isArray(user.portfolio)) {
     user.portfolio = []
   }
 
-  if (typeof user.avatar === 'undefined') {
-    user.avatar = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+  if (typeof user.avatar !== 'string' || user.avatar === '') {
+    user.avatar = 'https://revolancer.com/data/themes/topwork/assets/images/avatar-placeholder.png'
   }
 
-  if (typeof user.backgroundImage === 'undefined') {
-    user.backgroundImage = ''
+  if (typeof user.backgroundImage !== 'string' || user.backgroundImage === '') {
+    user.backgroundImage = '/assets/free/background.png'
   }
 
-  if (typeof user.colorScheme === 'undefined') {
-    user.colorScheme = ''
+  if (typeof user.colorScheme !== 'string' || user.colorScheme === '') {
+    user.colorScheme = 'gray'
   }
 
-  if (typeof user.about === 'undefined') {
+  if (typeof user.about !== 'string') {
     user.about = ''
-  }
-
-  if (typeof user.socials === 'undefined') {
-    user.socials = []
   }
 
   if (!Array.isArray(user.socials)) {
     user.socials = []
   }
 
-  if (typeof user.name === 'undefined' || user.name === '') {
+  if (typeof user.name !== 'string' || user.name === '') {
     user.name = username
   }
 
-  if (typeof user.tagline === 'undefined') {
+  if (typeof user.tagline !== 'string') {
     user.tagline = ''
   }
 
-  if (typeof user.layout === 'undefined') {
-    user.layout = 'advanced'
+  if (typeof user.layout !== 'string' || user.layout === '') {
+    user.layout = 'tabbed'
   }
 
   user.about = user.about.replace(/(<([^>]+)>)/gi, '')

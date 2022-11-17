@@ -22,6 +22,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
       <Header user={user} sectionRefs={sectionRefs} modal={modal} />
       <Container maxW='container.md'>
         <Box className={styles.profileBody}>
+          {user.about.length > 0 &&
           <section ref={sectionRefs[0]}>
             <>
             <span tabIndex={-1} id="about" className={styles.scrollTo}></span>
@@ -29,6 +30,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
             {user.about}
             </>
           </section>
+          }
           {user.portfolio.length > 0 &&
           <section ref={sectionRefs[1]}>
             <span tabIndex={-1} id="portfolio" className={styles.scrollTo}></span>
