@@ -129,7 +129,7 @@ const UserPage = ({ user }: { user: User | null }): JSX.Element => {
         <title>{user.name}</title>
         <meta name="description" content={user.about} />
         <meta name="og:type" property="og:type" content="website" />
-        <meta name="og:image" property="og:image" content={`${user.avatar}.webp`} />
+        <meta name="og:image" property="og:image" content={user.avatar} />
         <meta name="og:title" property="og:title" content={user.name} />
         <meta name="og:description" property="og:description" content={user.about} />
       </Head>

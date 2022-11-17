@@ -33,5 +33,5 @@ export function unescapeHTML (str: string): string {
 export function getThumb (url: string): string {
   url = url.replace('-scaled.', '.')
   const extensionStart = url.lastIndexOf('.')
-  return `${url.slice(0, extensionStart)}-150x150${url.slice(extensionStart)}.webp`
+  return `${url.slice(0, extensionStart)}-150x150${url.slice(extensionStart)}`
 }
