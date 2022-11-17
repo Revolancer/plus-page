@@ -2,10 +2,10 @@
 module.exports = {
   siteUrl: 'https://plus.page',
   generateRobotsTxt: true,
-  exclude: ['/sitemap-pages.xml'],
+  exclude: ['/sitemap-pages/index.xml'],
   robotsTxtOptions: {
     additionalSitemaps: [
-      'https://plus.page/sitemap-pages.xml'
+      'https://plus.page/sitemap-pages/index.xml'
     ]
   }
 }
