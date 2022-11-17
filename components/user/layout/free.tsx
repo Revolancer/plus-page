@@ -6,7 +6,7 @@ import styles from '../../../styles/themes/free.module.css'
 import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
-import { FaEnvelope, FaPencilAlt } from 'react-icons/fa'
+import { FaEnvelope, FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
 import { User } from '../../../pages/[user]'
 
 let thisUser: User
@@ -56,13 +56,14 @@ export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Elem
               Request a project
             </Button> <br /><br />
             <Link href="/" fontWeight="semibold">Want a website like this? Claim your <strong>plus.page</strong> today!</Link><br />
-            <Link href={`https://revolancer.com/?ref=${user.slug}`} fontWeight="semibold">Made by <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link>
+            <Link href={`https://revolancer.com/?ref=${user.slug}`} fontWeight="semibold">Made by <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link><br />
+            <Link fontSize="xs" href="https://revolancer.com/my-account/settings/plus-page/" target="_blank" rel="nofollow" className={styles.loginEditLink}>Log in to customise <FaExternalLinkAlt style={{ display: 'inline-block' }} /></Link>
           </Text>
         </Box>
       </Container>
     </Box>
     <Box position="fixed" top={0} left={0} width="100vw" height="100vh" zIndex="-1" overflow="hidden">
-      <Box position="fixed" top="-10vh" left="-10vw" width="120vw" height="120vh" backgroundColor="rvnavy" backgroundImage="/assets/free/background.png" backgroundPosition="top" backgroundSize="cover" backgroundAttachment="fixed" backgroundRepeat="no-repeat"></Box>
+      <Box position="fixed" top="-10vh" left="-10vw" width="120vw" height="120vh" backgroundColor="rvnavy" backgroundImage="/assets/free/background.png" backgroundPosition="top" backgroundSize="cover" backgroundAttachment="scroll" backgroundRepeat="no-repeat"></Box>
     </Box>
     <Link href="https://revolancer.com/my-account/settings/plus-page/" target="_blank">
     <Button position="fixed" bottom="4" left="4" className={styles.editButton} leftIcon={<FaPencilAlt />}>Customise</Button>

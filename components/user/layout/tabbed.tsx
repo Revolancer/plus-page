@@ -44,7 +44,7 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
       </Container>
     </Box>
     <Box position="fixed" top={0} left={0} width="100vw" height="100vh" zIndex="-1" overflow="hidden">
-      <Box position="fixed" top="-10vh" left="-10vw" width="120vw" height="120vh" backgroundImage={user.backgroundImage} backgroundPosition="top" backgroundSize="cover" backgroundAttachment="fixed" backgroundRepeat="no-repeat"></Box>
+      <Box position="fixed" top="-10vh" left="-10vw" width="120vw" height="120vh" backgroundImage={user.backgroundImage} backgroundPosition="top" backgroundSize="cover" backgroundAttachment="scroll" backgroundRepeat="no-repeat"></Box>
     </Box>
     <Link href="https://revolancer.com/my-account/settings/plus-page/" target="_blank">
     <Button position="fixed" bottom="4" left="4" className={styles.editButton} leftIcon={<FaPencilAlt />}>Customise</Button>
