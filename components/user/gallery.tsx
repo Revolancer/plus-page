@@ -7,6 +7,11 @@ import { updateImageUrl } from '../helpers'
 
 const galleryKey = process.env.NEXT_PUBLIC_LIGHTGALLERY_LICENSE
 
+function getThumb (url: string): string {
+  const extensionStart = url.lastIndexOf('.')
+  return `${url.slice(0, extensionStart)}-150x150${url.slice(extensionStart)}`
+}
+
 export default function PortfolioGallery ({ images, max = 9 }: { images: string[], max?: number }): JSX.Element {
   return (
     <>
@@ -22,7 +27,7 @@ export default function PortfolioGallery ({ images, max = 9 }: { images: string[
         return (
           <>
           <a href={imageUrl} data-src={imageUrl} aria-label='Expand Image'>
-            <Image src={imageUrl}
+            <Image src={getThumb(imageUrl)}
               alt=""
               style={{ objectFit: 'cover' }}
               data-src={imageUrl}
