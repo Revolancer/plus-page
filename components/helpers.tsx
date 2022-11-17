@@ -1,7 +1,3 @@
-export function updateImageUrl (url: string): string {
-  return url.replace('https://topwork.uk/', 'https://revolancer.com/')
-}
-
 const htmlEntities: { [key: string]: string } = {
   nbsp: ' ',
   cent: '¢',
@@ -32,4 +28,10 @@ export function unescapeHTML (str: string): string {
       return entity
     }
   })
-};
+}
+
+export function getThumb (url: string): string {
+  url = url.replace('-scaled.', '.')
+  const extensionStart = url.lastIndexOf('.')
+  return `${url.slice(0, extensionStart)}-150x150${url.slice(extensionStart)}.webp`
+}

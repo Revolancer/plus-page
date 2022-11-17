@@ -3,14 +3,9 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import { Image } from '@chakra-ui/react'
 
 import styles from '../../styles/gallery.module.css'
-import { updateImageUrl } from '../helpers'
+import { getThumb } from '../helpers'
 
 const galleryKey = process.env.NEXT_PUBLIC_LIGHTGALLERY_LICENSE
-
-function getThumb (url: string): string {
-  const extensionStart = url.lastIndexOf('.')
-  return `${url.slice(0, extensionStart)}-150x150${url.slice(extensionStart)}`
-}
 
 export default function PortfolioGallery ({ images, max = 9 }: { images: string[], max?: number }): JSX.Element {
   return (
@@ -23,14 +18,13 @@ export default function PortfolioGallery ({ images, max = 9 }: { images: string[
     >
       {images.map((image, i) => {
         if (i >= max) { return <></> }
-        const imageUrl = updateImageUrl(image)
         return (
           <>
-          <a href={imageUrl} data-src={imageUrl} aria-label='Expand Image'>
-            <Image src={getThumb(imageUrl)}
+          <a href={`${image}.webp`} data-src={`${image}.webp`} aria-label='Expand Image'>
+            <Image src={getThumb(image)}
               alt=""
               style={{ objectFit: 'cover' }}
-              data-src={imageUrl}
+              data-src={`${image}.webp`}
               borderRadius="16" overflow="hidden"
               data-aspect-ratio='1/1'
               loading='lazy' />

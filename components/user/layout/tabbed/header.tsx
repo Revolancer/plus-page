@@ -7,14 +7,14 @@ import useScrollSpy from 'react-use-scrollspy'
 import styles from '../../../../styles/themes/tabbed.module.css'
 import SocialLinkIcon from '../../sociallink'
 import { FaEnvelope } from 'react-icons/fa'
-import { updateImageUrl } from '../../../helpers'
+import { getThumb } from '../../../helpers'
 
 export default function Header ({ user, sectionRefs, modal }: { user: User, sectionRefs: Array<MutableRefObject<null>>, modal: any }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
     offsetPx: -220
   })
-  const avatar = updateImageUrl(user.avatar)
+  const avatar = user.avatar
 
   return (
     <>
@@ -32,11 +32,10 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
         <Container maxW='30rem' p='0'>
           <Flex alignItems='top' gap='8'>
             <Box w="24" h="24" objectFit="cover" borderRadius="full" overflow="hidden" position="relative" flexShrink="0">
-            <Image src={avatar}
+            <Image src={getThumb(avatar)}
               w="24" h="24"
               alt={user.name + '\'s Profile Picture'}
               style={{ objectFit: 'cover' }}
-              data-src={avatar}
               borderRadius="full" overflow="hidden"
               data-aspect-ratio='1/1' />
             </Box>
