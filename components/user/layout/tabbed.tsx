@@ -6,10 +6,9 @@ import styles from '../../../styles/themes/tabbed.module.css'
 import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
-import ContactForm from '../contactform'
 import { FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
 
-export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.Element {
+export default function TabbedLayout ({ user }: UserProfileProps): JSX.Element {
   const sectionRefs = [
     useRef(null),
     useRef(null)
@@ -17,9 +16,8 @@ export default function TabbedLayout ({ user, modal }: UserProfileProps): JSX.El
 
   return (
     <>
-    <ContactForm modal={modal} styles={styles} user={user} />
     <Box w="full" h="full">
-      <Header user={user} sectionRefs={sectionRefs} modal={modal} />
+      <Header user={user} sectionRefs={sectionRefs} />
       <Container maxW='container.md'>
         <Box className={styles.profileBody}>
           {user.about.length > 0 &&
