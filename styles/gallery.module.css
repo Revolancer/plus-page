@@ -24,3 +24,15 @@ div.galleryContainer {
     top: 0;
     left: 0;
 }
+
+.galleryPopout {
+    background-color: var(--color-800);
+}
+
+.galleryToolbar {
+    background-color: var(--color-900);
+}
+
+.galleryPopContainer > div:last-of-type > div:last-of-type > div:last-of-type {
+    background-color: var(--color-900);
+}
