@@ -17,7 +17,7 @@ function contactPressed (): void {
   }
 }
 
-export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Element {
+export default function FreeLayout ({ user }: UserProfileProps): JSX.Element {
   thisUser = user
 
   const sectionRefs = [
@@ -28,7 +28,7 @@ export default function FreeLayout ({ user, modal }: UserProfileProps): JSX.Elem
   return (
     <>
     <Box w="full" h="full">
-      <Header user={user} sectionRefs={sectionRefs} modal={modal} />
+      <Header user={user} sectionRefs={sectionRefs} />
       <Container maxW='container.md'>
         <Box className={styles.profileBody}>
           {user.about.length > 0 &&

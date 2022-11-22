@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Text, Image, useDisclosure } from '@chakra-ui/react'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
@@ -8,16 +8,20 @@ import styles from '../../../../styles/themes/tabbed.module.css'
 import SocialLinkIcon from '../../sociallink'
 import { FaEnvelope } from 'react-icons/fa'
 import { getThumb } from '../../../helpers'
+import ContactForm from '../../contactform'
 
-export default function Header ({ user, sectionRefs, modal }: { user: User, sectionRefs: Array<MutableRefObject<null>>, modal: any }): JSX.Element {
+export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
     offsetPx: -220
   })
   const avatar = user.avatar
 
+  const contactModal = useDisclosure()
+
   return (
     <>
+      <ContactForm modal={contactModal} styles={styles} user={user} />
       <Box
       color="black"
       backgroundColor="white"
@@ -53,7 +57,7 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
                 </Flex>
               </Flex>
               <Button
-                onClick={modal.onOpen}
+                onClick={contactModal.onOpen}
                 className={styles.contactButton}
                 leftIcon={<FaEnvelope />}
                 size={{ base: 'xs', md: 'sm' }}

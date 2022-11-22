@@ -16,7 +16,7 @@ function contactPressed (): void {
   }
 }
 
-export default function Header ({ user, sectionRefs, modal }: { user: User, sectionRefs: Array<MutableRefObject<null>>, modal: any }): JSX.Element {
+export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
   thisUser = user
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
