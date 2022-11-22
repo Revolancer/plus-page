@@ -1,15 +1,9 @@
-import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Image, Input, InputGroup, InputLeftAddon, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Textarea, useToast } from '@chakra-ui/react'
+import { Box, Image, Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react'
 import QRCode from 'react-qr-code'
 import { User } from '../../pages/[user]'
 import { getThumb } from '../helpers'
 
-let theModal: any
-let theUser: User
-
 export default function QrCodeModal ({ user, modal, styles }: { user: User, modal: any, styles: any }): JSX.Element {
-  theModal = modal
-  theUser = user
-
   return (
     <>
       <Modal isOpen={modal.isOpen} onClose={modal.onClose}>
