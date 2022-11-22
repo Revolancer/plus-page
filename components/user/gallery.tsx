@@ -1,5 +1,6 @@
 import LightGallery from 'lightgallery/react'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
 import { Image } from '@chakra-ui/react'
 
 import styles from '../../styles/gallery.module.css'
@@ -12,7 +13,7 @@ export default function PortfolioGallery ({ images, max = 9 }: { images: string[
     <>
     <LightGallery
       speed={500}
-      plugins={[lgThumbnail]}
+      plugins={[lgThumbnail, lgZoom]}
       elementClassNames={styles.galleryContainer}
       licenseKey={galleryKey}
     >
