@@ -139,6 +139,7 @@ export default function RegistrationForm (modal: any): JSX.Element {
                     <Turnstile
                       theme="light"
                       sitekey={captchaSitekey}
+                      action="register"
                       onVerify={(token) => { captchaResponse = token }} />
                     {
                       registrationError as unknown as boolean &&
