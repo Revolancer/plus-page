@@ -1,12 +1,13 @@
-import { Box, Button, Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Text, Image, useDisclosure } from '@chakra-ui/react'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
 import useScrollSpy from 'react-use-scrollspy'
 
 import styles from '../../../../styles/themes/free.module.css'
-import { FaEnvelope } from 'react-icons/fa'
+import { FaEnvelope, FaQrcode } from 'react-icons/fa'
 import { getThumb } from '../../../helpers'
+import QrCodeModal from '../../qrcode'
 
 let thisUser: User
 
@@ -24,8 +25,11 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
   })
   const avatar = user.avatar
 
+  const qrModal = useDisclosure()
+
   return (
     <>
+      <QrCodeModal modal={qrModal} styles={styles} user={user} />
       <Box
       color="black"
       backgroundColor="white"
@@ -54,15 +58,25 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
                   <Text className={styles.tagline}><Link href={`https://revolancer.com/user/${user.slug}?ref=${user.slug}`}>Freelancer on <strong>Revo</strong><Text as="span" fontWeight="light">lancer</Text></Link></Text>
                 </Flex>
               </Flex>
-              <Button
-                onClick={contactPressed}
-                className={styles.contactButton}
-                leftIcon={<FaEnvelope />}
-                size={{ base: 'xs', md: 'sm' }}
-                w="max"
-              >
-                Request a project
-              </Button>
+              <Flex gap="2">
+                <Button
+                  onClick={contactPressed}
+                  className={styles.contactButton}
+                  leftIcon={<FaEnvelope />}
+                  size={{ base: 'xs', md: 'sm' }}
+                  w="max"
+                >
+                  Request a project
+                </Button>
+                <Button
+                  onClick={qrModal.onOpen}
+                  className={styles.qrButton}
+                  size={{ base: 'xs', md: 'sm' }}
+                  w="max"
+                >
+                  <FaQrcode />
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
           <Flex gap="8" mt="4">

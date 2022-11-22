@@ -98,6 +98,10 @@ button.editButton:hover, button.editButton:active, button.editButton:focus {
     color: white;
 }
 
+button.qrButton {
+    color: var(--color-600);
+}
+
 div.qrContainer {
     color: var(--color-600);
     border-radius: 1rem;

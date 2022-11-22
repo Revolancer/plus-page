@@ -6,7 +6,7 @@ import useScrollSpy from 'react-use-scrollspy'
 
 import styles from '../../../../styles/themes/tabbed.module.css'
 import SocialLinkIcon from '../../sociallink'
-import { FaEnvelope } from 'react-icons/fa'
+import { FaEnvelope, FaQrcode } from 'react-icons/fa'
 import { getThumb } from '../../../helpers'
 import ContactForm from '../../contactform'
 import QrCodeModal from '../../qrcode'
@@ -59,24 +59,25 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
                   })}
                 </Flex>
               </Flex>
-              <Button
-                onClick={contactModal.onOpen}
-                className={styles.contactButton}
-                leftIcon={<FaEnvelope />}
-                size={{ base: 'xs', md: 'sm' }}
-                w="max"
-              >
-                Contact me
-              </Button>
-              <Button
-                onClick={qrModal.onOpen}
-                className={styles.contactButton}
-                leftIcon={<FaEnvelope />}
-                size={{ base: 'xs', md: 'sm' }}
-                w="max"
-              >
-                QR Code
-              </Button>
+              <Flex gap="2">
+                <Button
+                  onClick={contactModal.onOpen}
+                  className={styles.contactButton}
+                  leftIcon={<FaEnvelope />}
+                  size={{ base: 'xs', md: 'sm' }}
+                  w="max"
+                >
+                  Contact me
+                </Button>
+                <Button
+                  onClick={qrModal.onOpen}
+                  className={styles.qrButton}
+                  size={{ base: 'xs', md: 'sm' }}
+                  w="max"
+                >
+                  <FaQrcode />
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
           <Flex gap="8" mt="4">
