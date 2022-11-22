@@ -9,6 +9,7 @@ import SocialLinkIcon from '../../sociallink'
 import { FaEnvelope } from 'react-icons/fa'
 import { getThumb } from '../../../helpers'
 import ContactForm from '../../contactform'
+import QrCodeModal from '../../qrcode'
 
 export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
   const activeSection = useScrollSpy({
@@ -18,10 +19,12 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
   const avatar = user.avatar
 
   const contactModal = useDisclosure()
+  const qrModal = useDisclosure()
 
   return (
     <>
       <ContactForm modal={contactModal} styles={styles} user={user} />
+      <QrCodeModal modal={qrModal} styles={styles} user={user} />
       <Box
       color="black"
       backgroundColor="white"
@@ -64,6 +67,15 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
                 w="max"
               >
                 Contact me
+              </Button>
+              <Button
+                onClick={qrModal.onOpen}
+                className={styles.contactButton}
+                leftIcon={<FaEnvelope />}
+                size={{ base: 'xs', md: 'sm' }}
+                w="max"
+              >
+                QR Code
               </Button>
             </Flex>
           </Flex>
