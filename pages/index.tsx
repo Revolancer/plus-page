@@ -120,15 +120,46 @@ export default function Home (): JSX.Element {
           annually
           </Text>
       </Container>
+      <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
+      </Box>
+      <Box w="full" minH="3" backgroundColor="black" color="white" textAlign="center">
+        <Text casing="uppercase" fontSize={{ base: '2xl', md: '4xl' }} fontWeight="bold" paddingBlock="4">
+          Cyber Week Sale!
+        </Text>
+      </Box>
+      <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
+      </Box>
       <Container maxW="90rem" p={{ base: '8', lg: '16' }} position="relative" bgColor="whiteAlpha.600">
         <span tabIndex={-1} id='pricing' className={styles.scrollto}></span>
         <Flex direction="column" gap="4" p="4">
           <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>Plans &amp; Pricing</Heading>
           <Text size="sm">Get your mini website created in minutes for as little as £99 per year or take advantage of our limited-time-only Lifetime offer!</Text>
           <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={{ base: '4', md: '8' }} maxW="full" w={{ base: '100%', md: 'max' }} marginInline="auto">
-            <Flex direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="white" w={{ base: '100%', md: '80' }} marginInline="auto">
+            <Flex overflow="hidden" direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="white" w={{ base: '100%', md: '80' }} marginInline="auto">
+              <Box w="115%" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)" marginInline="-4" marginBlockStart="-4" marginBlockEnd="4" textColor="white">
+                <Text casing="uppercase" fontSize="2xl" fontWeight="bold" paddingBlock="2" textAlign="center">
+                  25% Off
+                </Text>
+              </Box>
               <Text fontWeight="bold">Standard</Text>
-              <Text fontWeight="bold"><Text as="span" fontSize="2xl">£99</Text>/year</Text>
+              <Text fontWeight="bold">
+                <Text as="span" fontSize="2xl" marginInlineEnd="1"><del>£99</del></Text>
+                <Text
+                  as="span"
+                  bgClip="text"
+                  bgGradient="linear(to-bl, rvyellow, rvmagenta)"
+                  filter="auto"
+                  brightness="90%"
+                  fontWeight="bold"
+                  marginBlockStart="2"
+                  marginBlockEnd="4"
+                  fontSize="2xl">
+                    £75
+                    <Text as="span" fontSize="lg">
+                      /year
+                    </Text>
+                  </Text>
+                </Text>
               <Divider borderColor="black" borderBottomWidth="2px" marginBlock="4" />
               <Flex gap="2" alignItems="top">
                 <Box flexShrink={0} pt="1">
@@ -160,7 +191,7 @@ export default function Home (): JSX.Element {
                 </Box>
                 <Text>Access to Revolancer Plus</Text>
               </Flex>
-              <Spacer />
+              <Spacer minH="4" />
               <Button
                 onClick={registrationModal.onOpen}
                 colorScheme="blackAlpha"
@@ -169,9 +200,31 @@ export default function Home (): JSX.Element {
                 Get Started
               </Button>
             </Flex>
-            <Flex direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="black" color="white" w={{ base: '100%', md: '80' }} marginInline="auto">
+            <Flex overflow="hidden" direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="black" color="white" w={{ base: '100%', md: '80' }} marginInline="auto">
+              <Box w="115%" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)" marginInline="-4" marginBlockStart="-4" marginBlockEnd="4" textColor="white">
+                <Text casing="uppercase" fontSize="2xl" fontWeight="bold" paddingBlock="2" textAlign="center">
+                  50% Off
+                </Text>
+              </Box>
               <Text fontWeight="bold">Lifetime (limited time only)</Text>
-              <Text fontWeight="bold"><Text as="span" fontSize="2xl">£249</Text> for life</Text>
+              <Text fontWeight="bold">
+                <Text as="span" fontSize="2xl" marginInlineEnd="1"><del>£249</del></Text>
+                <Text
+                  as="span"
+                  bgClip="text"
+                  bgGradient="linear(to-bl, rvyellow, rvmagenta)"
+                  filter="auto"
+                  brightness="90%"
+                  fontWeight="bold"
+                  marginBlockStart="2"
+                  marginBlockEnd="4"
+                  fontSize="2xl">
+                    £125
+                    <Text as="span" fontSize="lg" marginInlineStart="1">
+                      for life
+                    </Text>
+                  </Text>
+                </Text>
               <Divider borderColor="white" borderBottomWidth="2px" marginBlock="4" />
               <Flex gap="2" alignItems="top">
                 <Box flexShrink={0} pt="1">
