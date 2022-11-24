@@ -45,5 +45,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "typescript": "*"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
