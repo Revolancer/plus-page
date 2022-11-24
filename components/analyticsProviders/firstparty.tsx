@@ -29,7 +29,7 @@ export default function FirstPartyAnalytics (): JSX.Element {
         )
       }
       const formBodyStr = formBody.join('&')
-      const response = await fetch(apiHost + 'analytics/page-hits',
+      const response = await fetch(apiHost + '/analytics/page-hits',
         {
           method: 'POST',
           headers: {
