@@ -7,8 +7,8 @@ export function SectionSavings (): JSX.Element {
         <Flex direction="column" gap="4" p="4">
           <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>All you need for a <Text as="span" bgClip="text" bgGradient="linear(to-r, #FF4D61, #FFB229)" filter="auto" brightness="90%">fraction of the price.</Text></Heading>
           <Text>Even a small website could cost £1000+ to design and build, customising it to have interactive elements can quickly double the initial budget.</Text>
-          <Text>On top of that, you can expect to pay £600+ per year to maintain it. <em>Yikes!</em></Text>
-          <Text>Plus Pages covers everything from only £99 per year or £249 for a lifetime subscription.</Text>
+          <Text>On top of that, you can expect to pay £800+ per year to maintain it. <em>Yikes!</em></Text>
+          <Text>plus.page covers everything from only £8.25 per month!</Text>
           <Text fontSize="xs">*All price estimations were made on average service prices in the UK.</Text>
         </Flex>
         <Flex h="full" direction="column" justifyContent="space-around" w="full">

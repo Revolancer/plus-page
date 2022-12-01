@@ -34,12 +34,12 @@ export default function Home (): JSX.Element {
             <Text as="span" fontWeight="bold" fontSize={{ base: 'xl', lg: '3xl' }} align="center">Designed for use on social media</Text>
           </Text>
           <Text align="center" maxW="70ch"><strong>The only link you need</strong> - put your best talents on display, wow your dream clients, dazzle them with your portfolio, and make it easy for them to connect with you.</Text>
-          <Text align="center">Plus Page can help you achieve just that!</Text>
+          <Text align="center">plus.page can help you achieve just that!</Text>
           <Image
             src={laptopMock}
             alt="" />
           <span tabIndex={-1} id='features' className={styles.scrollto}></span>
-          <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} textAlign="center">Your <Text as="span" bgClip="text" bgGradient="linear(to-br, #FF6752, #FFC021)">Plus Page</Text></Heading>
+          <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} textAlign="center">Your <Text as="span" bgClip="text" bgGradient="linear(to-br, #FF6752, #FFC021)">plus.page</Text></Heading>
 
           <Grid templateColumns={{ base: '1fr', lg: 'repeat(3,1fr)' }} gap="8" w="full" maxW="container.lg">
             <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon1} alt="" /><Text fontSize="xl" fontWeight="bold">Simple</Text><Text align="center">Simply register and add personal information, we&rsquo;ll take care of the rest.</Text></Flex>
