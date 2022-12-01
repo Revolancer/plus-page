@@ -125,6 +125,7 @@ export default function ContactForm ({ user, modal, styles }: { user: User, moda
                     <Turnstile
                       theme="light"
                       sitekey={captchaSitekey}
+                      action="contact"
                       onVerify={(token) => { captchaResponse = token }} />
                     {
                       contactError as unknown as boolean &&

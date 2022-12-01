@@ -1,4 +1,4 @@
-import { Box, useDisclosure } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { User } from '../../pages/[user]'
 import FreeLayout from './layout/free'
 import TabbedLayout from './layout/tabbed'
@@ -7,11 +7,10 @@ import { setCookie } from 'cookies-next'
 
 export interface UserProfileProps {
   user: User
-  modal: any
 }
 
-export default function UserProfile ({ user }: { user: User }): JSX.Element {
-  let ProfileLayout: ({ user, modal }: UserProfileProps) => JSX.Element
+export default function UserProfile ({ user }: UserProfileProps): JSX.Element {
+  let ProfileLayout: (props: UserProfileProps) => JSX.Element
 
   switch (user.layout) {
     case 'tabs':
@@ -49,8 +48,6 @@ export default function UserProfile ({ user }: { user: User }): JSX.Element {
       user.colorScheme = 'gray'
   }
 
-  const contactModal = useDisclosure()
-
   if (typeof document !== 'undefined') {
     document.body.dataset.theme = user.colorScheme
   }
@@ -59,7 +56,7 @@ export default function UserProfile ({ user }: { user: User }): JSX.Element {
 
   return (
     <Box data-theme={user.colorScheme}>
-      <ProfileLayout user={user} modal={contactModal} />
+      <ProfileLayout user={user} />
     </Box>
   )
 }

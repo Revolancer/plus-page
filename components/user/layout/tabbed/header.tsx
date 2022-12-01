@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Text, Image, useDisclosure } from '@chakra-ui/react'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
@@ -6,18 +6,25 @@ import useScrollSpy from 'react-use-scrollspy'
 
 import styles from '../../../../styles/themes/tabbed.module.css'
 import SocialLinkIcon from '../../sociallink'
-import { FaEnvelope } from 'react-icons/fa'
+import { FaEnvelope, FaQrcode } from 'react-icons/fa'
 import { getThumb } from '../../../helpers'
+import ContactForm from '../../contactform'
+import QrCodeModal from '../../qrcode'
 
-export default function Header ({ user, sectionRefs, modal }: { user: User, sectionRefs: Array<MutableRefObject<null>>, modal: any }): JSX.Element {
+export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
     offsetPx: -220
   })
   const avatar = user.avatar
 
+  const contactModal = useDisclosure()
+  const qrModal = useDisclosure()
+
   return (
     <>
+      <ContactForm modal={contactModal} styles={styles} user={user} />
+      <QrCodeModal modal={qrModal} styles={styles} user={user} />
       <Box
       color="black"
       backgroundColor="white"
@@ -52,15 +59,25 @@ export default function Header ({ user, sectionRefs, modal }: { user: User, sect
                   })}
                 </Flex>
               </Flex>
-              <Button
-                onClick={modal.onOpen}
-                className={styles.contactButton}
-                leftIcon={<FaEnvelope />}
-                size={{ base: 'xs', md: 'sm' }}
-                w="max"
-              >
-                Contact me
-              </Button>
+              <Flex gap="2">
+                <Button
+                  onClick={contactModal.onOpen}
+                  className={styles.contactButton}
+                  leftIcon={<FaEnvelope />}
+                  size={{ base: 'xs', md: 'sm' }}
+                  w="max"
+                >
+                  Contact me
+                </Button>
+                <Button
+                  onClick={qrModal.onOpen}
+                  className={styles.qrButton}
+                  size={{ base: 'xs', md: 'sm' }}
+                  w="max"
+                >
+                  <FaQrcode />
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
           <Flex gap="8" mt="4">

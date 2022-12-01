@@ -1,7 +1,7 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import phoneMock from '../../public/assets/home/phonemock2.png'
+import phoneMock from '../../public/assets/home/phonemockCyberweek.png'
 
 export default function Hero (modal: any): JSX.Element {
   return (

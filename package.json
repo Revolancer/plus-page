@@ -24,8 +24,10 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-lorem-ipsum": "^1.4.10",
+    "react-qr-code": "^2.0.8",
     "react-turnstile": "^1.0.5",
     "react-use-scrollspy": "^3.1.1",
+    "react-uuid": "^2.0.0",
     "yup": "^0.32.11",
     "yup-password": "^0.2.2"
   },
@@ -44,5 +46,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "typescript": "*"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

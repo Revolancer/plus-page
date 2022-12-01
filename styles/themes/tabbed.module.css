@@ -97,3 +97,27 @@ button.editButton:hover, button.editButton:active, button.editButton:focus {
     background: var(--color-600);
     color: white;
 }
+
+button.qrButton {
+    color: var(--color-600);
+}
+
+div.qrContainer {
+    color: var(--color-600);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.qrPhoto {
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    width: 120px;
+    height: 120px;
+    border-width: 12px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}

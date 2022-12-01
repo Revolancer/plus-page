@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, Flex, Grid, Heading, Spacer, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Grid, Heading, Text, useDisclosure } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/home/header'
@@ -14,8 +14,8 @@ import featIcon5 from '../public/assets/home/feats5.png'
 import featIcon6 from '../public/assets/home/feats6.png'
 
 import styles from '../styles/Home.module.css'
-import { FaCheck } from 'react-icons/fa'
 import Footer from '../components/home/footer'
+import SectionSavings from '../components/home/sections/savings'
 import SectionPricing from '../components/home/sections/pricing'
 
 export default function Home (): JSX.Element {
@@ -55,125 +55,8 @@ export default function Home (): JSX.Element {
           </Grid>
         </Flex>
       </Container>
-      <SectionPricing />
-      <Container maxW="90rem" p={{ base: '8', lg: '16' }} position="relative" bgColor="whiteAlpha.600">
-        <span tabIndex={-1} id='pricing' className={styles.scrollto}></span>
-        <Flex direction="column" gap="4" p="4">
-          <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>Plans &amp; Pricing</Heading>
-          <Text size="sm">Get your mini website created in minutes for as little as £99 per year or take advantage of our limited-time-only Lifetime offer!</Text>
-          <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={{ base: '4', md: '8' }} maxW="full" w={{ base: '100%', md: 'max' }} marginInline="auto">
-            <Flex direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="white" w={{ base: '100%', md: '80' }} marginInline="auto">
-              <Text fontWeight="bold">Standard</Text>
-              <Text fontWeight="bold"><Text as="span" fontSize="2xl">£99</Text>/year</Text>
-              <Divider borderColor="black" borderBottomWidth="2px" marginBlock="4" />
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Choose a colour scheme</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Add your background image</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Link your social media</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Receive messages directly to your inbox</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Access to Revolancer Plus</Text>
-              </Flex>
-              <Spacer />
-              <Button
-                onClick={registrationModal.onOpen}
-                colorScheme="blackAlpha"
-                backgroundColor="black"
-              >
-                Get Started
-              </Button>
-            </Flex>
-            <Flex direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="black" color="white" w={{ base: '100%', md: '80' }} marginInline="auto">
-              <Text fontWeight="bold">Lifetime (limited time only)</Text>
-              <Text fontWeight="bold"><Text as="span" fontSize="2xl">£249</Text> for life</Text>
-              <Divider borderColor="white" borderBottomWidth="2px" marginBlock="4" />
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Choose a colour scheme</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Add your background image</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Link your social media</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Receive messages directly to your inbox</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Access to Revolancer Plus</Text>
-              </Flex>
-              <Text bgClip="text" bgGradient="linear(to-bl, rvyellow, rvmagenta)" filter="auto" brightness="90%" fontWeight="bold" marginBlockStart="2" marginBlockEnd="4">One page, one payment for life</Text>
-              <Spacer />
-              <Button
-                onClick={registrationModal.onOpen}
-                bgGradient='linear(to-tl, rvyellow, rvmagenta)'
-                _focus={{
-                  bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
-                  filter: 'auto',
-                  brightness: '85%'
-                }}
-                _active={{
-                  bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
-                  filter: 'auto',
-                  brightness: '85%'
-                }}
-                _hover={{
-                  bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
-                  filter: 'auto',
-                  brightness: '85%'
-                }}
-                color="white"
-              >
-                Get Started
-              </Button>
-            </Flex>
-          </Grid>
-        </Flex>
-        <Box w="full" h="full" position="absolute" top={0} left={0} overflow="hidden" zIndex={-1}>
-        <Box w="full" h="full" position="absolute" top={0} left={0}
-        filter="auto" blur="30px" brightness="110%">
-          <Box w="80%" height="100%" position="absolute" top="50%" left="10%" borderRadius="full" backgroundColor="orange.500"
-                bgGradient='linear(to-tl, rvyellow, rvmagenta)' />
-        </Box>
-        </Box>
-      </Container>
+      <SectionSavings />
+      <SectionPricing styles={styles} registrationModal={registrationModal} />
       <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
       </Box>
       <Container maxW="90rem" p={{ base: '8', lg: '16' }}>
