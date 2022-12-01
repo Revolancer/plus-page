@@ -1,9 +1,9 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import phoneMock from '../../public/assets/home/phonemockCyberweek.png'
+import phoneMock from '../../../public/assets/home/phonemockCyberweek.png'
 
-export default function Hero (modal: any): JSX.Element {
+export function Hero (modal: any): JSX.Element {
   return (
     <>
       <Box w="full" minH="60vh" h={{ base: 'max(500px, 75vh)', md: 'max(400px, 60vh)' }} position="relative" overflow="hidden">

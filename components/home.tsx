@@ -1,0 +1,5 @@
+export { SectionPricing } from './home/sections/pricing'
+export { SectionSavings } from './home/sections/savings'
+export { Hero } from './home/sections/hero'
+export { Header } from './home/sections/header'
+export { Footer } from './home/sections/footer'

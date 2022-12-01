@@ -1,6 +1,6 @@
 import { Container, Grid, Flex, Heading, Text, Box, Spacer } from '@chakra-ui/react'
 
-export default function SectionSavings (): JSX.Element {
+export function SectionSavings (): JSX.Element {
   return (
     <Container maxW="90rem" p={{ base: '8', lg: '16' }}>
       <Grid templateColumns={{ base: '1fr', lg: '1fr 400px' }} gap={{ base: '8', lg: '24' }} w="full">

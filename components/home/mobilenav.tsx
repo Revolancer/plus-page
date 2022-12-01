@@ -10,7 +10,7 @@ import {
 import { FaBars } from 'react-icons/fa'
 import Link from '../link'
 
-function MobileNav (modal: any): JSX.Element {
+export function MobileNav (modal: any): JSX.Element {
   return (
     <Menu>
       <MenuButton
@@ -108,5 +108,3 @@ function MobileNav (modal: any): JSX.Element {
     </Menu>
   )
 }
-
-export default MobileNav

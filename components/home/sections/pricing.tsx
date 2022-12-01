@@ -1,7 +1,7 @@
 import { Container, Grid, Flex, Heading, Text, Box, Spacer, Divider, Button, UseDisclosureReturn } from '@chakra-ui/react'
 import { FaCheck } from 'react-icons/fa'
 
-export default function SectionPricing (styles: { [key: string]: any }, registrationModal: UseDisclosureReturn): JSX.Element {
+export function SectionPricing (styles: { [key: string]: any }, registrationModal: UseDisclosureReturn): JSX.Element {
   return (
     <Container maxW="90rem" p={{ base: '8', lg: '16' }} position="relative" bgColor="whiteAlpha.600">
       <span tabIndex={-1} id='pricing' className={styles.scrollto}></span>

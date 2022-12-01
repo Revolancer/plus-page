@@ -1,8 +1,7 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text, useDisclosure } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from '../components/home/header'
-import Hero from '../components/home/hero'
+import { Hero, Header, Footer, SectionSavings, SectionPricing } from '../components/home'
 
 import laptopMock from '../public/assets/home/laptopmock2.png'
 import phoneFooter from '../public/assets/home/phonemock3.png'
@@ -14,9 +13,6 @@ import featIcon5 from '../public/assets/home/feats5.png'
 import featIcon6 from '../public/assets/home/feats6.png'
 
 import styles from '../styles/Home.module.css'
-import Footer from '../components/home/footer'
-import SectionSavings from '../components/home/sections/savings'
-import SectionPricing from '../components/home/sections/pricing'
 
 export default function Home (): JSX.Element {
   const registrationModal = useDisclosure()
