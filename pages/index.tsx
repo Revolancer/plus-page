@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Hero, Header, Footer, SectionSavings, SectionPricing } from '../components/home'
 
-import laptopMock from '../public/assets/home/laptopmock2.png'
+import laptopMock from '../public/assets/home/laptopmock3.png'
 import phoneFooter from '../public/assets/home/phonemock3.png'
 import featIcon1 from '../public/assets/home/feats1.png'
 import featIcon2 from '../public/assets/home/feats2.png'
