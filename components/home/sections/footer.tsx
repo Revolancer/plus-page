@@ -1,8 +1,8 @@
 import { Box, Container, Flex, Text } from '@chakra-ui/react'
-import Link from '../link'
-import Logo from '../logo'
+import Link from '../../link'
+import Logo from '../../logo'
 
-export default function Footer (): JSX.Element {
+export function Footer (): JSX.Element {
   return (
     <>
       <Box color="white" backgroundColor="black" paddingInline="8" paddingBlock="20" zIndex="5">

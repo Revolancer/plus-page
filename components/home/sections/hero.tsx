@@ -1,16 +1,16 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import phoneMock from '../../public/assets/home/phonemockCyberweek.png'
+import phoneMock from '../../../public/assets/home/phonemock4.png'
 
-export default function Hero (modal: any): JSX.Element {
+export function Hero (modal: any): JSX.Element {
   return (
     <>
       <Box w="full" minH="60vh" h={{ base: 'max(500px, 75vh)', md: 'max(400px, 60vh)' }} position="relative" overflow="hidden">
       <Box w="full" h="full" backgroundColor="whiteAlpha.700" position="absolute">
-      <Container maxW='110rem' w="full" h="full" >
+      <Container maxW='90rem' w="full" h="full" >
         <Grid templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }} w="full" h="full">
-          <Flex p="12" w="full" maxW="50ch" h={{ base: 'max(200px, 45vh)', md: 'max(400px, 60vh)' }} justifyContent={{ md: 'center' }} direction="column" gap={{ base: '2', md: '4' }}>
+          <Flex p="12" w="full" maxW="50ch" h={{ base: 'max(18rem, 33vh)', md: 'max(400px, 60vh)' }} justifyContent={{ md: 'center' }} direction="column" gap={{ base: '2', md: '4' }}>
             <Heading as="h1" fontSize={{ base: '3xl', lg: '6xl' }} fontWeight="bold">
               Claim your <Text as="span" bgClip="text" bgGradient="linear(to-r, #FF4D61, #FFB229)" filter="auto" brightness="90%">mini&nbsp;website</Text>
             </Heading>

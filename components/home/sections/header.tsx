@@ -1,10 +1,10 @@
 import { Box, Container, Flex, Spacer } from '@chakra-ui/react'
-import DesktopNav from './desktopnav'
-import MobileNav from './mobilenav'
-import RegistrationForm from './registerform'
-import Logo from '../logo'
+import { DesktopNav } from '../desktopnav'
+import { MobileNav } from '../mobilenav'
+import { RegistrationForm } from '../registerform'
+import Logo from '../../logo'
 
-export default function Header (registrationModal: any): JSX.Element {
+export function Header (registrationModal: any): JSX.Element {
   return (
     <>
       <RegistrationForm {...registrationModal} />

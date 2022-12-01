@@ -1,10 +1,9 @@
-import { Box, Button, Container, Divider, Flex, Grid, Heading, Spacer, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Grid, Heading, Text, useDisclosure } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from '../components/home/header'
-import Hero from '../components/home/hero'
+import { Hero, Header, Footer, SectionSavings, SectionPricing } from '../components/home'
 
-import laptopMock from '../public/assets/home/laptopmock2.png'
+import laptopMock from '../public/assets/home/laptopmock3.png'
 import phoneFooter from '../public/assets/home/phonemock3.png'
 import featIcon1 from '../public/assets/home/feats1.png'
 import featIcon2 from '../public/assets/home/feats2.png'
@@ -14,8 +13,6 @@ import featIcon5 from '../public/assets/home/feats5.png'
 import featIcon6 from '../public/assets/home/feats6.png'
 
 import styles from '../styles/Home.module.css'
-import { FaCheck } from 'react-icons/fa'
-import Footer from '../components/home/footer'
 
 export default function Home (): JSX.Element {
   const registrationModal = useDisclosure()
@@ -37,12 +34,12 @@ export default function Home (): JSX.Element {
             <Text as="span" fontWeight="bold" fontSize={{ base: 'xl', lg: '3xl' }} align="center">Designed for use on social media</Text>
           </Text>
           <Text align="center" maxW="70ch"><strong>The only link you need</strong> - put your best talents on display, wow your dream clients, dazzle them with your portfolio, and make it easy for them to connect with you.</Text>
-          <Text align="center">Plus Page can help you achieve just that!</Text>
+          <Text align="center">plus.page can help you achieve just that!</Text>
           <Image
             src={laptopMock}
             alt="" />
           <span tabIndex={-1} id='features' className={styles.scrollto}></span>
-          <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} textAlign="center">Your <Text as="span" bgClip="text" bgGradient="linear(to-br, #FF6752, #FFC021)">Plus Page</Text></Heading>
+          <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }} textAlign="center">Your <Text as="span" bgClip="text" bgGradient="linear(to-br, #FF6752, #FFC021)">plus.page</Text></Heading>
 
           <Grid templateColumns={{ base: '1fr', lg: 'repeat(3,1fr)' }} gap="8" w="full" maxW="container.lg">
             <Flex direction="column" alignItems="center" gap="4"><Image src={featIcon1} alt="" /><Text fontSize="xl" fontWeight="bold">Simple</Text><Text align="center">Simply register and add personal information, we&rsquo;ll take care of the rest.</Text></Flex>
@@ -54,243 +51,8 @@ export default function Home (): JSX.Element {
           </Grid>
         </Flex>
       </Container>
-      <Container maxW="90rem" p={{ base: '8', lg: '16' }}>
-          <Grid templateColumns={{ base: '1fr', lg: '1fr 400px' }} gap={{ base: '8', lg: '24' }} w="full">
-            <Flex direction="column" gap="4" p="4">
-              <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>All you need for a <Text as="span" bgClip="text" bgGradient="linear(to-r, #FF4D61, #FFB229)" filter="auto" brightness="90%">fraction of the price.</Text></Heading>
-              <Text>Even a small website could cost £1000+ to design and build, customising it to have interactive elements can quickly double the initial budget.</Text>
-              <Text>On top of that, you can expect to pay £600+ per year to maintain it. <em>Yikes!</em></Text>
-              <Text>Plus Pages covers everything from only £99 per year or £249 for a lifetime subscription.</Text>
-              <Text fontSize="xs">*All price estimations were made on average service prices in the UK.</Text>
-            </Flex>
-            <Flex h="full" direction="column" justifyContent="space-around" w="full">
-              <Flex direction="column" gap="2" p="4" borderRadius="8" boxShadow="lg" backgroundColor="black" color="white" maxW="350px" w="full" marginInline="auto">
-                <Text align="center" fontSize="lg" fontWeight="bold">Average Website Cost</Text>
-                <Flex alignItems="center">
-                  <Box w="4" h="4" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" display="inline-block" m="2" borderRadius="4"></Box>
-                  <Text as="span">Hosting</Text>
-                  <Spacer />
-                  <Text>£180/year</Text>
-                </Flex>
-                <Flex alignItems="center">
-                  <Box w="4" h="4" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" display="inline-block" m="2" borderRadius="4"></Box>
-                  <Text as="span">Domain Name</Text>
-                  <Spacer />
-                  <Text>£20/year</Text>
-                </Flex>
-                <Flex alignItems="center">
-                  <Box w="4" h="4" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" display="inline-block" m="2" borderRadius="4"></Box>
-                  <Text as="span">Development</Text>
-                  <Spacer />
-                  <Text>£1500</Text>
-                </Flex>
-                <Flex alignItems="center">
-                  <Box w="4" h="4" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" display="inline-block" m="2" borderRadius="4"></Box>
-                  <Text as="span">Website Designer</Text>
-                  <Spacer />
-                  <Text>£1000</Text>
-                </Flex>
-                <Flex alignItems="center">
-                  <Box w="4" h="4" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" display="inline-block" m="2" borderRadius="4"></Box>
-                  <Text as="span">SEO Optimisation</Text>
-                  <Spacer />
-                  <Text>£500</Text>
-                </Flex>
-                <Flex alignItems="center">
-                  <Box w="4" h="4" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" display="inline-block" m="2" borderRadius="4"></Box>
-                  <Text as="span">Maintenance</Text>
-                  <Spacer />
-                  <Text>£600/year</Text>
-                </Flex>
-                <Spacer />
-                <Flex alignItems="center">
-                  <Text as="span" fontSize="lg" fontWeight="semibold">Total:</Text>
-                  <Spacer />
-                  <Text fontWeight="bold" fontSize="2xl" bgClip="text" bgGradient="linear(to-br, #FF4D61, #FFB229)" bgColor="orange.500" filter="auto">£3000 + £800<Text as="span" fontSize="md">/year</Text></Text>
-                </Flex>
-              </Flex>
-            </Flex>
-          </Grid>
-          <Text fontWeight="bold" fontSize='xl' mt="4">With plus.page you can
-          <Text as="span" bgClip="text" bgGradient="linear(to-r, #FF4D61, #FFB229)" filter="auto" brightness="90%"> easily save </Text>
-          up to
-          <Text as="span" bgClip="text" bgGradient="linear(to-b, #FF4D61, #FFB229)" filter="auto" brightness="90%"> £3000 </Text>
-          upfront and over
-          <Text as="span" bgClip="text" bgGradient="linear(to-bl, #FF4D61, #FFB229)" filter="auto" brightness="90%"> £700 </Text>
-          annually
-          </Text>
-      </Container>
-      <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
-      </Box>
-      <Box w="full" minH="3" backgroundColor="black" color="white" textAlign="center">
-        <Text casing="uppercase" fontSize={{ base: '2xl', md: '4xl' }} fontWeight="bold" paddingBlock="4">
-          Cyber Week Sale!
-        </Text>
-      </Box>
-      <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
-      </Box>
-      <Container maxW="90rem" p={{ base: '8', lg: '16' }} position="relative" bgColor="whiteAlpha.600">
-        <span tabIndex={-1} id='pricing' className={styles.scrollto}></span>
-        <Flex direction="column" gap="4" p="4">
-          <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>Plans &amp; Pricing</Heading>
-          <Text size="sm">Get your mini website created in minutes for as little as £99 per year or take advantage of our limited-time-only Lifetime offer!</Text>
-          <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={{ base: '4', md: '8' }} maxW="full" w={{ base: '100%', md: 'max' }} marginInline="auto">
-            <Flex overflow="hidden" direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="white" w={{ base: '100%', md: '80' }} marginInline="auto">
-              <Box w="115%" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)" marginInline="-4" marginBlockStart="-4" marginBlockEnd="4" textColor="white">
-                <Text casing="uppercase" fontSize="2xl" fontWeight="bold" paddingBlock="2" textAlign="center">
-                  25% Off
-                </Text>
-              </Box>
-              <Text fontWeight="bold">Standard</Text>
-              <Text fontWeight="bold">
-                <Text as="span" fontSize="2xl" marginInlineEnd="1"><del>£99</del></Text>
-                <Text
-                  as="span"
-                  bgClip="text"
-                  bgGradient="linear(to-bl, rvyellow, rvmagenta)"
-                  filter="auto"
-                  brightness="90%"
-                  fontWeight="bold"
-                  marginBlockStart="2"
-                  marginBlockEnd="4"
-                  fontSize="2xl">
-                    £75
-                    <Text as="span" fontSize="lg">
-                      /year
-                    </Text>
-                  </Text>
-                </Text>
-              <Divider borderColor="black" borderBottomWidth="2px" marginBlock="4" />
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Choose a colour scheme</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Add your background image</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Link your social media</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Receive messages directly to your inbox</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Access to Revolancer Plus</Text>
-              </Flex>
-              <Spacer minH="4" />
-              <Button
-                onClick={registrationModal.onOpen}
-                colorScheme="blackAlpha"
-                backgroundColor="black"
-              >
-                Get Started
-              </Button>
-            </Flex>
-            <Flex overflow="hidden" direction="column" p="4" borderRadius="8" boxShadow="lg" backgroundColor="black" color="white" w={{ base: '100%', md: '80' }} marginInline="auto">
-              <Box w="115%" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)" marginInline="-4" marginBlockStart="-4" marginBlockEnd="4" textColor="white">
-                <Text casing="uppercase" fontSize="2xl" fontWeight="bold" paddingBlock="2" textAlign="center">
-                  50% Off
-                </Text>
-              </Box>
-              <Text fontWeight="bold">Lifetime (limited time only)</Text>
-              <Text fontWeight="bold">
-                <Text as="span" fontSize="2xl" marginInlineEnd="1"><del>£249</del></Text>
-                <Text
-                  as="span"
-                  bgClip="text"
-                  bgGradient="linear(to-bl, rvyellow, rvmagenta)"
-                  filter="auto"
-                  brightness="90%"
-                  fontWeight="bold"
-                  marginBlockStart="2"
-                  marginBlockEnd="4"
-                  fontSize="2xl">
-                    £125
-                    <Text as="span" fontSize="lg" marginInlineStart="1">
-                      for life
-                    </Text>
-                  </Text>
-                </Text>
-              <Divider borderColor="white" borderBottomWidth="2px" marginBlock="4" />
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Choose a colour scheme</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Add your background image</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Link your social media</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Receive messages directly to your inbox</Text>
-              </Flex>
-              <Flex gap="2" alignItems="top">
-                <Box flexShrink={0} pt="1">
-                <FaCheck />
-                </Box>
-                <Text>Access to Revolancer Plus</Text>
-              </Flex>
-              <Text bgClip="text" bgGradient="linear(to-bl, rvyellow, rvmagenta)" filter="auto" brightness="90%" fontWeight="bold" marginBlockStart="2" marginBlockEnd="4">One page, one payment for life</Text>
-              <Spacer />
-              <Button
-                onClick={registrationModal.onOpen}
-                bgGradient='linear(to-tl, rvyellow, rvmagenta)'
-                _focus={{
-                  bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
-                  filter: 'auto',
-                  brightness: '85%'
-                }}
-                _active={{
-                  bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
-                  filter: 'auto',
-                  brightness: '85%'
-                }}
-                _hover={{
-                  bgGradient: 'linear(to-tl, rvyellow, rvmagenta)',
-                  filter: 'auto',
-                  brightness: '85%'
-                }}
-                color="white"
-              >
-                Get Started
-              </Button>
-            </Flex>
-          </Grid>
-        </Flex>
-        <Box w="full" h="full" position="absolute" top={0} left={0} overflow="hidden" zIndex={-1}>
-        <Box w="full" h="full" position="absolute" top={0} left={0}
-        filter="auto" blur="30px" brightness="110%">
-          <Box w="80%" height="100%" position="absolute" top="50%" left="10%" borderRadius="full" backgroundColor="orange.500"
-                bgGradient='linear(to-tl, rvyellow, rvmagenta)' />
-        </Box>
-        </Box>
-      </Container>
+      <SectionSavings />
+      <SectionPricing styles={styles} registrationModal={registrationModal} />
       <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
       </Box>
       <Container maxW="90rem" p={{ base: '8', lg: '16' }}>

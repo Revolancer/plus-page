@@ -1,7 +1,7 @@
 import { Button, Spacer } from '@chakra-ui/react'
 import Link from '../link'
 
-function DesktopNav (modal: any): JSX.Element {
+export function DesktopNav (modal: any): JSX.Element {
   return (
     <>
       <Link href='#features' className="smooth-scroll">
@@ -41,5 +41,3 @@ function DesktopNav (modal: any): JSX.Element {
     </>
   )
 }
-
-export default DesktopNav

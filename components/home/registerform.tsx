@@ -84,7 +84,7 @@ let registrationError: string
 
 let captchaResponse: string
 
-export default function RegistrationForm (modal: any): JSX.Element {
+export function RegistrationForm (modal: any): JSX.Element {
   theModal = modal
 
   toast = useToast()

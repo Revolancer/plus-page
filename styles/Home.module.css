@@ -7,3 +7,22 @@ span.scrollto {
         scroll-margin-top: 130px;
     }
 }
+
+#priceLabel {
+    display: inline;
+}
+
+#periodLabel {
+    display: inline;
+}
+
+#billedAtLabel {
+    display: inline;
+}
+
+#upsellLabel {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s, max-height 0.2s linear;
+    max-height: 0;
+}
