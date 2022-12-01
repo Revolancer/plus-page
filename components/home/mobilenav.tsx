@@ -34,6 +34,7 @@ export function MobileNav (modal: any): JSX.Element {
       >
         <Link href='#features'>
           <MenuItem
+            bgColor='black'
             _focus={{
               bgColor: 'black'
             }}
@@ -46,6 +47,7 @@ export function MobileNav (modal: any): JSX.Element {
         </Link>
         <Link href='#pricing'>
           <MenuItem
+            bgColor='black'
             _focus={{
               bgColor: 'black'
             }}
@@ -58,6 +60,7 @@ export function MobileNav (modal: any): JSX.Element {
         </Link>
         <Link href='#faq'>
           <MenuItem
+            bgColor='black'
             _focus={{
               bgColor: 'black'
             }}
@@ -70,6 +73,7 @@ export function MobileNav (modal: any): JSX.Element {
         </Link>
         <Link href='https://revolancer.com/login/' target="_blank">
           <MenuItem
+            bgColor='black'
             _focus={{
               bgColor: 'black'
             }}
