@@ -28,7 +28,6 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
       color="black"
       backgroundColor="white"
       p="8"
-      pb="0"
       position="sticky"
       top="0"
       zIndex="5"
@@ -59,19 +58,6 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
                 </Flex>
               </Flex>
             </Flex>
-          </Flex>
-          <Flex gap="8" mt="4">
-            <nav>
-              {user.about.length > 0 &&
-              <Link
-              href="#about"
-              className={(activeSection === 0 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>About Me</Link>
-              }
-              {user.portfolio.length > 0 &&
-              <Link href="#portfolio"
-              className={(activeSection === 1 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>Portfolio</Link>
-              }
-            </nav>
           </Flex>
         </Container>
       </Box>
