@@ -28,7 +28,7 @@ const get404User = (path: string): User => {
       'https://revolancer.com/media/2022/12/404.jpg',
       'https://revolancer.com/media/2022/12/404-2.png',
       'https://revolancer.com/media/2022/12/404-3.jpg',
-      'https://revolancer.com/media/2022/12/404-4.jpg',
+      'https://revolancer.com/media/2022/12/404-7.jpg',
       'https://revolancer.com/media/2022/12/404-5.jpg',
       'https://revolancer.com/media/2022/12/404-6.jpg'
     ],
