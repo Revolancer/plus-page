@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Heading, Text, Image, useDisclosure } from '@chakra-ui/react'
+import { Box, Container, Flex, Heading, Text, Image, useDisclosure } from '@chakra-ui/react'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
 import Link from '../../../link'
@@ -6,7 +6,6 @@ import useScrollSpy from 'react-use-scrollspy'
 
 import styles from '../../../../styles/themes/tabbed.module.css'
 import SocialLinkIcon from '../../sociallink'
-import { FaEnvelope, FaQrcode } from 'react-icons/fa'
 import { getThumb } from '../../../helpers'
 import ContactForm from '../../contactform'
 import QrCodeModal from '../../qrcode'

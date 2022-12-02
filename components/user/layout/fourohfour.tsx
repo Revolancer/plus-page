@@ -3,10 +3,9 @@ import Header from './fourohfour/header'
 import { useRef } from 'react'
 
 import styles from '../../../styles/themes/fourohfour.module.css'
-import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
+import { Box, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
-import { FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
 import NotExist from './fourohfour/notexist'
 
 export default function FourOhFourLayout ({ user }: UserProfileProps): JSX.Element {
