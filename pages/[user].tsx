@@ -109,18 +109,17 @@ export const getServerSideProps: GetServerSideProps = async ({ res, params }) =>
   const username = params?.user as string
 
   const user = await getUser(username)
+  if (user === null) {
+    return {
+      notFound: true
+    }
+  }
   return {
     props: { user } // will be passed to the page component as props
   }
 }
 
 const UserPage = ({ user }: { user: User | null }): JSX.Element => {
-  if (user === null) {
-    if (typeof window !== 'undefined') {
-      window.location.href = '/'
-    }
-  }
-
   return (
     <>
       {(user != null) &&

@@ -4,6 +4,7 @@ import FreeLayout from './layout/free'
 import TabbedLayout from './layout/tabbed'
 
 import { setCookie } from 'cookies-next'
+import FourOhFourLayout from './layout/fourohfour'
 
 export interface UserProfileProps {
   user: User
@@ -13,7 +14,10 @@ export default function UserProfile ({ user }: UserProfileProps): JSX.Element {
   let ProfileLayout: (props: UserProfileProps) => JSX.Element
 
   switch (user.layout) {
-    case 'tabs':
+    case 'fourohfour':
+      ProfileLayout = FourOhFourLayout
+      break
+    case 'tabbed':
     default:
       ProfileLayout = TabbedLayout
   }

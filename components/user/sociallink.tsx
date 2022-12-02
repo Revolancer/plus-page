@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons'
-import { Fa500Px, FaBandcamp, FaBehance, FaBloggerB, FaDeviantart, FaFacebook, FaGithubAlt, FaGitlab, FaGlobe, FaInstagram, FaItchIo, FaLinkedinIn, FaPatreon, FaPinterestP, FaRedditAlien, FaSoundcloud, FaTiktok, FaTumblr, FaUnsplash, FaVimeoV, FaYoutube } from 'react-icons/fa'
+import { Fa500Px, FaBandcamp, FaBehance, FaBloggerB, FaDeviantart, FaFacebook, FaGithubAlt, FaGitlab, FaGlobe, FaInstagram, FaItchIo, FaLinkedinIn, FaPatreon, FaPinterestP, FaRedditAlien, FaSoundcloud, FaTiktok, FaTumblr, FaTwitter, FaUnsplash, FaVimeoV, FaYoutube } from 'react-icons/fa'
 import { SocialLink } from '../../pages/[user]'
 import Link from '../link'
 
@@ -69,6 +69,9 @@ export default function SocialLinkIcon ({ link }: { link: SocialLink }): JSX.Ele
       break
     case 'reddit':
       Icon = FaRedditAlien
+      break
+    case 'twitter':
+      Icon = FaTwitter
       break
     default:
       Icon = FaGlobe

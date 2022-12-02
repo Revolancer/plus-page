@@ -1,0 +1,123 @@
+a.sectionLink {
+    color: var(--chakra-colors-gray-600);
+    padding: 8px;
+    display: inline-block;
+}
+
+a.sectionLinkActive {
+    font-weight: 600;
+    color: var(--color-600);
+    border-bottom: 4px solid var(--color-600);
+}
+
+span.scrollTo {
+    scroll-margin-top: 190px;
+}
+
+.profileBody {
+    background-color: var(--color-50);
+    color: var(--color-900);
+    margin-inline: 1rem;
+    padding-inline: 1rem;
+    padding-block-start: 1rem;
+    padding-block-end: 9rem;
+    min-height: calc(100vh - 188px);
+    position: relative;
+}
+
+.profileBody > section {
+    max-width: 30rem;
+    margin-inline: auto;
+    padding-block-end: 1rem;
+    white-space: pre-line;
+}
+
+@media only screen and (min-width: 56em) {
+    .profileBody {
+        margin-inline: 0;
+    }
+}
+
+.attribution {
+    position: absolute;
+    left: 0;
+    bottom: 4rem;
+}
+
+h1.heading {
+    color: var(--color-900);
+}
+
+.tagline {
+    color: var(--color-900);
+    font-size: 0.8rem;
+}
+
+div.socialIcons {
+    color: var(--color-500);
+    height: fit-content;
+    margin-top: 0.2rem;
+    font-size: 1.1rem;
+}
+
+div.socialIcons a:hover {
+    color: var(--color-800);
+}
+
+button.contactButton {
+    background: var(--color-500);
+    color: white;
+}
+
+button.contactButton:hover, button.contactButton:active, button.contactButton:focus {
+    background: var(--color-600);
+    color: white;
+}
+
+button.contactSubmitButton {
+    background: var(--color-500);
+    color: white;
+}
+
+button.contactSubmitButton:hover, button.contactSubmitButton:active, button.contactSubmitButton:focus {
+    background: var(--color-600);
+    color: white;
+}
+
+a.loginEditLink{
+    color: var(--color-500);
+}
+
+button.editButton {
+    background: var(--color-500);
+    color: white;
+}
+
+button.editButton:hover, button.editButton:active, button.editButton:focus {
+    background: var(--color-600);
+    color: white;
+}
+
+button.qrButton {
+    color: var(--color-600);
+}
+
+div.qrContainer {
+    color: var(--color-600);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.qrPhoto {
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    width: 120px;
+    height: 120px;
+    border-width: 12px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
