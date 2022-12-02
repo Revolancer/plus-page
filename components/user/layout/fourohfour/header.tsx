@@ -1,29 +1,16 @@
 import { Box, Container, Flex, Heading, Text, Image, useDisclosure } from '@chakra-ui/react'
 import { MutableRefObject } from 'react'
 import { User } from '../../../../pages/[user]'
-import Link from '../../../link'
-import useScrollSpy from 'react-use-scrollspy'
 
 import styles from '../../../../styles/themes/tabbed.module.css'
 import SocialLinkIcon from '../../sociallink'
 import { getThumb } from '../../../helpers'
-import ContactForm from '../../contactform'
-import QrCodeModal from '../../qrcode'
 
 export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
-  const activeSection = useScrollSpy({
-    sectionElementRefs: sectionRefs,
-    offsetPx: -220
-  })
   const avatar = user.avatar
-
-  const contactModal = useDisclosure()
-  const qrModal = useDisclosure()
 
   return (
     <>
-      <ContactForm modal={contactModal} styles={styles} user={user} />
-      <QrCodeModal modal={qrModal} styles={styles} user={user} />
       <Box
       color="black"
       backgroundColor="white"
