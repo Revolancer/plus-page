@@ -118,7 +118,7 @@ export function SectionPricing ({ styles, registrationModal }: { styles: { [key:
               brightness: '85%'
             }}
           >
-            Get Started
+            Try free for 14 days
           </Button>
         </Flex>
       </Grid>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Hero, Header, Footer, SectionSavings, SectionPricing } from '../components/home'
 
 import laptopMock from '../public/assets/home/laptopmock3.png'
-import phoneFooter from '../public/assets/home/phonemock3.png'
+import phoneFooter from '../public/assets/home/phonemock5.png'
 import featIcon1 from '../public/assets/home/feats1.png'
 import featIcon2 from '../public/assets/home/feats2.png'
 import featIcon3 from '../public/assets/home/feats3.png'
@@ -60,9 +60,9 @@ export default function Home (): JSX.Element {
           <span tabIndex={-1} id='faq' className={styles.scrollto}></span>
           <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>FAQs</Heading>
           <Text fontSize="lg" fontWeight="bold">Do I need to pay for hosting?</Text>
-          <Text>No, you don’t. It’s already included in the plan you’ve subscribed to -  £99 per year or £249 for lifetime</Text>
+          <Text>No, you don&rsquo;t. It&rsquo;s already included in the plan you&rsquo;ve subscribed to - from £8.25 per month</Text>
           <Text fontSize="lg" fontWeight="bold">Is it easy to set up my plus.page?</Text>
-          <Text>Absolutely! Simply fill out the information in your Revolancer account and we’ll handle the rest.</Text>
+          <Text>Absolutely! Simply fill out the information in your Revolancer account and we&rsquo;ll handle the rest.</Text>
           <Text fontSize="lg" fontWeight="bold">Is my plus.page SEO optimised?</Text>
           <Text>Yes, it is! We made sure to follow the best SEO practices so your website will be easy to find.</Text>
         </Flex>
