@@ -28,17 +28,16 @@ export default function PortfolioGallery ({ images, max = 9 }: { images: string[
       {images.map((image, i) => {
         if (i >= max) { return <></> }
         return (
-          <>
-          <a href={image} data-src={image} aria-label='Expand Image'>
+          <a href={image} data-src={image} aria-label='Expand Image'
+              key={image}>
             <Image src={getThumb(image)}
               alt=""
               style={{ objectFit: 'cover' }}
               data-src={image}
               borderRadius="16" overflow="hidden"
               data-aspect-ratio='1/1'
-              loading='lazy' />
+              loading='lazy'/>
           </a>
-          </>
         )
       })}
     </LightGallery>
