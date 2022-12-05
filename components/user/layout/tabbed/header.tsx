@@ -11,10 +11,16 @@ import { getThumb } from '../../../helpers'
 import ContactForm from '../../contactform'
 import QrCodeModal from '../../qrcode'
 
-export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
+export default function Header ({ user, sectionRefs, headerRef }: { user: User, sectionRefs: Array<MutableRefObject<null>>, headerRef: MutableRefObject<HTMLElement | undefined> }): JSX.Element {
+  let height = 250
+  if (typeof headerRef.current !== 'undefined' &&
+      typeof headerRef.current.offsetHeight !== 'undefined') {
+    height = headerRef.current.offsetHeight + 10
+  }
+
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
-    offsetPx: -220
+    offsetPx: -1 * height
   })
   const avatar = user.avatar
 
@@ -35,6 +41,8 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
       zIndex="5"
       borderBottomRadius="16"
       boxShadow="lg"
+      // @ts-expect-error: Type error
+      ref={headerRef}
       >
         <Container maxW='30rem' p='0'>
           <Flex alignItems='top' gap='8'>
@@ -82,14 +90,19 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
           </Flex>
           <Flex gap="8" mt="4">
             <nav>
+              {user.links.length > 0 &&
+              <Link
+              href="#links"
+              className={(activeSection === 0 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>My Links</Link>
+              }
               {user.about.length > 0 &&
               <Link
               href="#about"
-              className={(activeSection === 0 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>About Me</Link>
+              className={(activeSection === 1 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>About Me</Link>
               }
               {user.portfolio.length > 0 &&
               <Link href="#portfolio"
-              className={(activeSection === 1 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>Portfolio</Link>
+              className={(activeSection === 2 ? styles.sectionLinkActive : '') + ' ' + styles.sectionLink + ' smooth-scroll'}>Portfolio</Link>
               }
             </nav>
           </Flex>

@@ -17,11 +17,18 @@ function contactPressed (): void {
   }
 }
 
-export default function Header ({ user, sectionRefs }: { user: User, sectionRefs: Array<MutableRefObject<null>> }): JSX.Element {
+export default function Header ({ user, sectionRefs, headerRef }: { user: User, sectionRefs: Array<MutableRefObject<null>>, headerRef: MutableRefObject<HTMLDivElement | undefined> }): JSX.Element {
   thisUser = user
+
+  let height = 250
+  if (typeof headerRef.current !== 'undefined' &&
+      typeof headerRef.current.offsetHeight !== 'undefined') {
+    height = headerRef.current.offsetHeight + 10
+  }
+
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
-    offsetPx: -220
+    offsetPx: -1 * height
   })
   const avatar = user.avatar
 
@@ -40,6 +47,8 @@ export default function Header ({ user, sectionRefs }: { user: User, sectionRefs
       zIndex="5"
       borderBottomRadius="16"
       boxShadow="lg"
+      // @ts-expect-error: Type error
+      ref={headerRef}
       >
         <Container maxW='30rem' p='0'>
           <Flex alignItems='top' gap='8'>

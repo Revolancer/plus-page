@@ -10,10 +10,6 @@ a.sectionLinkActive {
     border-bottom: 4px solid var(--chakra-colors-rvnavy);
 }
 
-span.scrollTo {
-    scroll-margin-top: 190px;
-}
-
 .profileBody {
     background-color: var(--chakra-colors-rvnavywhite);
     color: var(--chakra-colors-rvnavy);

@@ -1,37 +1,54 @@
 import { UserProfileProps } from '../profile'
 import Header from './tabbed/header'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import styles from '../../../styles/themes/tabbed.module.css'
 import { Box, Button, Container, Heading, Text } from '@chakra-ui/react'
 import PortfolioGallery from '../gallery'
 import Link from '../../link'
 import { FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
+import Links from '../links'
 
 export default function TabbedLayout ({ user }: UserProfileProps): JSX.Element {
   const sectionRefs = [
     useRef(null),
+    useRef(null),
     useRef(null)
   ]
+
+  const [offset, setOffset] = useState('0px')
+
+  const headerRef = useRef<HTMLElement>()
+
+  useEffect(() => {
+    if (typeof headerRef.current !== 'undefined') {
+      setOffset((headerRef.current.offsetHeight + 5 as unknown as string) + 'px')
+    }
+  }, [])
 
   return (
     <>
     <Box w="full" h="full">
-      <Header user={user} sectionRefs={sectionRefs} />
+      <Header user={user} sectionRefs={sectionRefs} headerRef={headerRef} />
       <Container maxW='container.md'>
         <Box className={styles.profileBody}>
-          {user.about.length > 0 &&
+          {user.links.length > 0 &&
           <section ref={sectionRefs[0]}>
-            <>
-            <span tabIndex={-1} id="about" className={styles.scrollTo}></span>
+            <span tabIndex={-1} id="links" className={styles.scrollTo} style={{ scrollMarginTop: offset }}></span>
+            <Heading fontSize="2xl" mb="2">My Links</Heading>
+            <Links links={user.links} styles={styles} />
+          </section>
+          }
+          {user.about.length > 0 &&
+          <section ref={sectionRefs[1]}>
+            <span tabIndex={-1} id="about" className={styles.scrollTo} style={{ scrollMarginTop: offset }}></span>
             <Heading fontSize="2xl" mb="2">About Me</Heading>
             {user.about}
-            </>
           </section>
           }
           {user.portfolio.length > 0 &&
-          <section ref={sectionRefs[1]}>
-            <span tabIndex={-1} id="portfolio" className={styles.scrollTo}></span>
+          <section ref={sectionRefs[2]}>
+            <span tabIndex={-1} id="portfolio" className={styles.scrollTo} style={{ scrollMarginTop: offset }}></span>
             <Heading fontSize="2xl" mb="2">My Portfolio</Heading>
             <PortfolioGallery images={user.portfolio} max={9} />
           </section>

@@ -1,24 +1,6 @@
 import Head from 'next/head'
 import UserProfile from '../components/user/profile'
-
-export interface SocialLink {
-  name: string
-  url: string
-}
-
-export interface User {
-  name: string
-  tagline: string
-  slug: string
-  hasPlus: boolean
-  portfolio: string[]
-  avatar: string
-  backgroundImage: string
-  colorScheme: string
-  about: string
-  socials: SocialLink[]
-  layout: string
-}
+import { User } from './[user]'
 
 const get404User = (path: string): User => {
   const user: User = {
@@ -44,6 +26,7 @@ const get404User = (path: string): User => {
       { name: 'twitter', url: 'https://twitter.com/revolancercom' },
       { name: 'linkedin', url: 'https://uk.linkedin.com/company/revolancer' }
     ],
+    links: [],
     name: 'Error 404',
     tagline: 'Page not found',
     layout: 'fourohfour'

@@ -8,6 +8,11 @@ export interface SocialLink {
   url: string
 }
 
+export interface CustomLink {
+  name: string
+  url: string
+}
+
 export interface User {
   name: string
   tagline: string
@@ -19,6 +24,7 @@ export interface User {
   colorScheme: string
   about: string
   socials: SocialLink[]
+  links: CustomLink[]
   layout: string
 }
 
@@ -50,6 +56,7 @@ const getUser = async (username: string): Promise<User | null> => {
     colorScheme: body.colourScheme,
     about: body.desc,
     socials: body.socials,
+    links: body.customLinks,
     name: body.displayName,
     tagline: body.tagLine,
     layout: body.layout
@@ -77,6 +84,10 @@ const getUser = async (username: string): Promise<User | null> => {
 
   if (!Array.isArray(user.socials)) {
     user.socials = []
+  }
+
+  if (!Array.isArray(user.links)) {
+    user.links = []
   }
 
   if (typeof user.name !== 'string' || user.name === '') {
