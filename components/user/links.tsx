@@ -7,14 +7,16 @@ export default function Links ({ links, max = 10, styles }: { links: CustomLink[
     <>
       {links.map((link, i) => {
         if (i >= max) { return <></> }
-        link.name = link.name.replace(/[\n\s]/g, ' ').slice(0, 40)
-        link.name = link.url.replace(/[\n\s]/g, ' ').slice(0, 256)
+        link.label = link.label.replace(/[\n\s]/g, ' ').slice(0, 40)
+        link.url = link.url.replace(/[\n\s]/g, ' ').slice(0, 256)
         return (
           <a href={link.url}
-              key={link.url + link.name}
-              className={styles.customLink}>
+              key={link.url + link.label}
+              className={styles.customLink}
+              target="_blank"
+              rel="noopener noreferrer nofollow">
             <Flex align="baseline" gap="4">
-            <Text>{link.name}</Text>
+            <Text>{link.label}</Text>
             <Spacer />
             <FaExternalLinkAlt />
             </Flex>

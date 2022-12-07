@@ -9,7 +9,7 @@ export interface SocialLink {
 }
 
 export interface CustomLink {
-  name: string
+  label: string
   url: string
 }
 
@@ -47,6 +47,12 @@ const getUser = async (username: string): Promise<User | null> => {
     return null
   }
 
+  try {
+    body.links = JSON.parse(body.links)
+  } catch (e) {
+    body.links = []
+  }
+
   const user: User = {
     slug: username,
     hasPlus: body.plus === true,
@@ -56,7 +62,7 @@ const getUser = async (username: string): Promise<User | null> => {
     colorScheme: body.colourScheme,
     about: body.desc,
     socials: body.socials,
-    links: body.customLinks,
+    links: body.links,
     name: body.displayName,
     tagline: body.tagLine,
     layout: body.layout
