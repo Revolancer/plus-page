@@ -78,5 +78,5 @@ export default function SocialLinkIcon ({ link }: { link: SocialLink }): JSX.Ele
       break
   }
 
-  return (<Link href={link.url} target="_blank" rel="nofollow" aria-label={link.name}><Icon /></Link>)
+  return (<Link href={link.url} target="_blank" rel="noopener noreferrer nofollow" aria-label={link.name}><Icon /></Link>)
 }
