@@ -22,7 +22,7 @@ export default function TabbedLayout ({ user }: UserProfileProps): JSX.Element {
 
   useEffect(() => {
     if (typeof headerRef.current !== 'undefined') {
-      setOffset((headerRef.current.offsetHeight + 5 as unknown as string) + 'px')
+      setOffset((headerRef.current.offsetHeight as unknown as string) + 'px')
     }
   }, [])
 

@@ -8,6 +8,7 @@ import PortfolioGallery from '../gallery'
 import Link from '../../link'
 import { FaEnvelope, FaExternalLinkAlt, FaPencilAlt } from 'react-icons/fa'
 import { User } from '../../../pages/[user]'
+import Links from '../links'
 
 let thisUser: User
 
@@ -32,7 +33,7 @@ export default function FreeLayout ({ user }: UserProfileProps): JSX.Element {
 
   useEffect(() => {
     if (typeof headerRef.current !== 'undefined') {
-      setOffset((headerRef.current.offsetHeight + 5 as unknown as string) + 'px')
+      setOffset((headerRef.current.offsetHeight as unknown as string) + 'px')
     }
   }, [])
 
@@ -42,8 +43,15 @@ export default function FreeLayout ({ user }: UserProfileProps): JSX.Element {
       <Header user={user} sectionRefs={sectionRefs} headerRef={headerRef} />
       <Container maxW='container.md'>
         <Box className={styles.profileBody}>
-          {user.about.length > 0 &&
+          {user.links.length > 0 &&
           <section ref={sectionRefs[0]}>
+            <span tabIndex={-1} id="links" className={styles.scrollTo} style={{ scrollMarginTop: offset }}></span>
+            <Heading fontSize="2xl" mb="2">My Links</Heading>
+            <Links links={user.links} styles={styles} max={3} />
+          </section>
+          }
+          {user.about.length > 0 &&
+          <section ref={sectionRefs[1]}>
             <>
             <span tabIndex={-1} id="about" className={styles.scrollTo} style={{ scrollMarginTop: offset }}></span>
             <Heading fontSize="2xl" mb="2">About Me</Heading>
@@ -52,7 +60,7 @@ export default function FreeLayout ({ user }: UserProfileProps): JSX.Element {
           </section>
           }
           {user.portfolio.length > 0 &&
-          <section ref={sectionRefs[1]}>
+          <section ref={sectionRefs[2]}>
             <span tabIndex={-1} id="portfolio" className={styles.scrollTo} style={{ scrollMarginTop: offset }}></span>
             <Heading fontSize="2xl" mb="2">My Portfolio</Heading>
             <PortfolioGallery images={user.portfolio} max={3} />
