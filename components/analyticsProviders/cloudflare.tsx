@@ -1,8 +1,14 @@
 import Script from 'next/script'
 
 export default function CloudflareAnalytics (): JSX.Element {
+  const token = process.env.NEXT_PUBLIC_ANALYTICS_CLOUDFLARE
+
+  if (typeof token === 'undefined') {
+    return <></>
+  }
+
   const beacon = {
-    token: process.env.NEXT_PUBLIC_ANALYTICS_CLOUDFLARE
+    token
   }
 
   return (

@@ -38,7 +38,6 @@ function togglePricing (e: ChangeEvent<HTMLInputElement>): void {
 
 export function SectionPricing ({ styles, registrationModal }: { styles: { [key: string]: any }, registrationModal: UseDisclosureReturn }): JSX.Element {
   theStyles = styles
-  console.log(styles)
   return (
     <Container maxW="90rem" p={{ base: '8', lg: '16' }} position="relative" bgColor="whiteAlpha.600">
       <span tabIndex={-1} id='pricing' className={styles.scrollto}></span>

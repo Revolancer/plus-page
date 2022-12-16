@@ -3,6 +3,10 @@ import Script from 'next/script'
 export default function GoogleAnalytics4 (): JSX.Element {
   const ga4 = process.env.NEXT_PUBLIC_ANALYTICS_GA4 as string
 
+  if (typeof ga4 === 'undefined') {
+    return <></>
+  }
+
   return (
   <>
   <Script
