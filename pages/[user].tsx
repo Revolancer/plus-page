@@ -55,7 +55,7 @@ const getUser = async (username: string): Promise<User | null> => {
 
   const user: User = {
     slug: username,
-    hasPlus: body.plus === true,
+    hasPlus: true, // body.plus === true,
     portfolio: body.folio,
     avatar: body.avatar,
     backgroundImage: body.bgImage,
