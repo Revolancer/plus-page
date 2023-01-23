@@ -1,7 +1,7 @@
 import { Box, Button, Container, Flex, Grid, Heading, Text, useDisclosure } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Hero, Header, Footer, SectionSavings, SectionPricing } from '../components/home'
+import { Hero, Header, Footer/* , SectionSavings, SectionPricing */ } from '../components/home'
 
 import laptopMock from '../public/assets/home/laptopmock3.png'
 import phoneFooter from '../public/assets/home/phonemock5.png'
