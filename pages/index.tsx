@@ -51,8 +51,8 @@ export default function Home (): JSX.Element {
           </Grid>
         </Flex>
       </Container>
-      <SectionSavings />
-      <SectionPricing styles={styles} registrationModal={registrationModal} />
+      {/* <SectionSavings /> */}
+      {/* <SectionPricing styles={styles} registrationModal={registrationModal} /> */}
       <Box w="full" minH="3" bgGradient="linear(to-r,rvmagenta,rvyellow)">
       </Box>
       <Container maxW="90rem" p={{ base: '8', lg: '16' }}>
@@ -60,7 +60,7 @@ export default function Home (): JSX.Element {
           <span tabIndex={-1} id='faq' className={styles.scrollto}></span>
           <Heading fontWeight="bold" fontSize={{ base: '2xl', lg: '5xl' }}>FAQs</Heading>
           <Text fontSize="lg" fontWeight="bold">Do I need to pay for hosting?</Text>
-          <Text>No, you don&rsquo;t. It&rsquo;s already included in the plan you&rsquo;ve subscribed to - from £8.25 per month</Text>
+          <Text>No, you don&rsquo;t. It&rsquo;s all included for free!</Text>
           <Text fontSize="lg" fontWeight="bold">Is it easy to set up my plus.page?</Text>
           <Text>Absolutely! Simply fill out the information in your Revolancer account and we&rsquo;ll handle the rest.</Text>
           <Text fontSize="lg" fontWeight="bold">Is my plus.page SEO optimised?</Text>

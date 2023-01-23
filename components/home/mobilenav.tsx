@@ -45,6 +45,7 @@ export function MobileNav (modal: any): JSX.Element {
             Features
           </MenuItem>
         </Link>
+        {/*
         <Link href='#pricing'>
           <MenuItem
             bgColor='black'
@@ -58,6 +59,7 @@ export function MobileNav (modal: any): JSX.Element {
             Plans &amp; Pricing
           </MenuItem>
         </Link>
+          */}
         <Link href='#faq'>
           <MenuItem
             bgColor='black'

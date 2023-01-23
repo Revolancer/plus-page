@@ -7,9 +7,11 @@ export function DesktopNav (modal: any): JSX.Element {
       <Link href='#features' className="smooth-scroll">
         Features
       </Link>
+      {/*
       <Link href='#pricing' className="smooth-scroll">
         Plans &amp; Pricing
       </Link>
+      */}
       <Link href='#faq' className="smooth-scroll">
         FAQs
       </Link>
